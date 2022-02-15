@@ -5,3 +5,28 @@ https://greensock.com/
 https://lottiefiles.com/
 https://babeljs.io/
 */
+
+let circleGem = Object;
+let triangleGem = Object;
+let squareGem = Object;
+let diamondGem = Object;
+
+let gemArray = [];
+
+
+
+function gemPush(gem){
+    
+    //pushes the gems from QR scan into the gem Array
+    if (gemArray === 3){
+        //stop them from pushing into the array
+    } else {
+        gemArray.push(gem)
+    }
+
+}
+
+function swordQR(){
+    
+}
+
