@@ -9,8 +9,9 @@ p{
 }
 
 body{
-  background-image: url(/Capstone-II/Media/PlaceholderBG.png);
+  background-image: url(/Media/PlaceholderBG.png);
   background-color: #cccccc;
+  width: 100%;
   
 }
 
