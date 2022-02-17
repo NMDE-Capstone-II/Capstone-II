@@ -4,12 +4,14 @@ https://animejs.com/
 https://greensock.com/
 https://lottiefiles.com/
 https://babeljs.io/
+
+redstapler
 */
 
 let circleGem = Object;
 let triangleGem = Object;
 let squareGem = Object;
-let diamondGem = Object;
+
 
 let gemArray = [];
 
