@@ -5,12 +5,32 @@ function hideAndShow(show, hide){
     return false;
 };
 
-anime({
-    targets: ['TITLE.svg'],
-    points: '64 128 8.574 96 8.574 32 64 0 119.426 32 119.426 96',
-    baseFrequency: 0,
-    scale: 1,
-    loop: true,
-    direction: 'alternate',
-    easing: 'easeInOutExpo'
-});
+function titleAnimation(){
+    //Intro animation for the title image
+    gsap.from("#titleScreenImage", {
+        duration: 2, 
+        y: 300, 
+        opacity: 0, 
+        scale: 0.5
+    });
+
+    gsap.to('#titleScreenImage', {
+        rotate: 360,
+        duration: 2
+    });
+}
+
+function titleButtonAnimation(){
+    gsap.from("#titleButton", {
+        duration: 2, 
+        y: 300, 
+        opacity: 0, 
+        scale: 0.5
+    });
+
+    gsap.to('#titleButton', {
+        rotate: 360,
+        duration: 2
+    });
+}
+
