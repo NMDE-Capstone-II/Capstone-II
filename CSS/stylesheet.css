@@ -6,6 +6,8 @@ h1 {
 }
 p{
   color: lavender;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: medium;
 }
 
 body{
@@ -16,6 +18,22 @@ body{
 }
 
 
+.loader{
+  position: fixed;
+    width: 100vw;
+    height: 200vh;
+    pointer-events: none;
+    background-color: #FFF6ED;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+}
+
+
+.is-transitioning {
+    pointer-events: none;
+    cursor: progress;
+}
 
 #beginButton {
     background-color: deepskyblue;

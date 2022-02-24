@@ -6,34 +6,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/CSS/stylesheet.css">
-    <script src="/JS/webpage.js"></script>
+    <script type="text/javascript" src="/JS/webpage.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+
     <title>Testerrr</title>
 </head>
 
-<body onload="return hideAndShow('startScreen', 'Instructions');">
+<body onload="return hideAndShow('startScreen', 'Instructions');" data-barba="wrapper">
+    <div class="loader"></div>
 
-    <div id="startScreen">
-        <img src="/Media/TITLE.svg" alt="titleScreenTitle"  style="width: 100%" id="titleScreenImage" onload="titleAnimation()">
-        <div class="container">
-            <div class="center">
-                <a href="#" id="titleButton" onclick="return hideAndShow('Instructions', 'startScreen');"><button><img src="/Media/BUTTON.svg" class="center" ></button></a>
+
+
+
+    <main data-barba="container" data-barba-namespace="home">
+
+
+
+        <div id="startScreen">
+            <img src="/Media/TITLE.svg" alt="titleScreenTitle" style="width: 100%" id="titleScreenImage"
+                onload="titleAnimation()">
+            <div class="container">
+                <div class="center">
+                    <a href="#" id="titleButton" onclick="return hideAndShow('Instructions', 'startScreen');">
+                        <button><img src="/Media/BUTTON.svg" onload="titleButtonAnimation()" class="center">
+                        </button>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div id="Instructions">
-        <h1>How To Play</h1>
-        <div class="container">
-            <div class="center">
-                <p>A collection of stones is what you must seek, for then your true sword shall be complete.</p>
-                <p>Go around campus and find shapes with a sigil (QR Code) and Scan it and collect three of them</p>
-                <a href="#" onclick="return hideAndShow('startScreen', 'Instructions');"><button>Back To Start</button></a>
-                <a href='/HTML/stonePage.html'><button>PLAY</button></a>
+    
+        <div id="Instructions">
+            <h1>How To Play</h1>
+            <div class="container">
+                <div class="center">
+                    <p>A collection of stones is what you must seek, for then your true sword shall be complete.</p>
+                    <p>Go around campus and find shapes with a sigil (QR Code) and Scan it and collect three of them</p>
+                    <a href="#" onclick="return hideAndShow('startScreen', 'Instructions');"><button>Back To
+                            Start</button></a>
+                    <a href='/HTML/proto2.html'><button>PLAY</button></a>
+                    <a href='/HTML/dragAnddrop.html'><button>JS Test</button></a>
+                </div>
             </div>
         </div>
-    </div>
-    </div>
+        </div>
+
+
+
+
+    </main>
 </body>
 
 </html>
