@@ -27,8 +27,12 @@ body{
   background-color: #cccccc;
   width: 100%;
   
+  
 }
 
+.img{
+  width: 100%;
+}
 
 .loader{
   position: fixed;

@@ -16,7 +16,7 @@
     <main data-barba="container" data-barba-namespace="home">
 
         <div id="startScreen">
-            <img src="/Media/TITLE.svg" alt="titleScreenTitle" style="width: 100%" id="titleScreenImage"
+            <img src="/Media/TITLE.svg" alt="titleScreenTitle" id="titleScreenImage" class="img"
                 onload="titleAnimation()">
             <div class="container">
                 <div class="center">
@@ -38,14 +38,6 @@
     barba.init({
         transitions: [{
             name: 'opacity-transition',
-            from: {
-                namespace: [
-                    'home'
-                ]},
-            to: {
-                namespace: [
-                    'instructions'
-                ]},
                 leave(data) {
                     return gsap.to(data.current.container, {
                         opacity: 0
