@@ -7,40 +7,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/CSS/stylesheet.css">
     <script type="text/javascript" src="/JS/webpage.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://unpkg.com/@barba/core"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
 
     <title>Testerrr</title>
 </head>
 
-<body onload="return hideAndShow('startScreen', 'Instructions');" data-barba="wrapper">
+<body data-barba="wrapper">
     <div class="loader"></div>
-
-
-
-
     <main data-barba="container" data-barba-namespace="home">
-
-
 
         <div id="startScreen">
             <img src="/Media/TITLE.svg" alt="titleScreenTitle" style="width: 100%" id="titleScreenImage"
                 onload="titleAnimation()">
             <div class="container">
                 <div class="center">
-                    <a href="/HTML/instructions.html" id="titleButton" >
+                    <a href="/HTML/instructions.html" id="titleButton">
                         <button><img src="/Media/BUTTON.svg" onload="titleButtonAnimation()" class="center">
                         </button>
                     </a>
                 </div>
             </div>
         </div>
-    
-
 
 
     </main>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://unpkg.com/@barba/core"></script>
+
+<script type="text/javascript">
+    barba.init({
+        transitions: [{
+            name: 'opacity-transition',
+            from: {
+                namespace: [
+                    'home'
+                ]},
+            to: {
+                namespace: [
+                    'instructions'
+                ]},
+                leave(data) {
+                    return gsap.to(data.current.container, {
+                        opacity: 0
+                    });
+                },
+                enter(data) {
+                    return gsap.from(data.next.container, {
+                        opacity: 0
+                    });
+                },
+
+            }]
+    });
+</script>
 
 </html>

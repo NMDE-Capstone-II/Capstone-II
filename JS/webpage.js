@@ -1,29 +1,3 @@
-// import * as transition from './transitions.js'
-
-
-
-
-
-
-function hideAndShow(show, hide) {
-  document.getElementById(show).style.display = 'block';
-  document.getElementById(hide).style.display = 'none';
-  // do something before the transition starts
-  barba.hooks.before(() => {
-    document.querySelector('html').classList.add('is-transitioning');
-  });
-  // do something after the transition finishes
-  barba.hooks.after(() => {
-    document.querySelector('html').classList.remove('is-transitioning');
-  });
-  
-  barba.hooks.enter(() => {
-    window.scrollTo(0, 0);
-});
-
-
-  return false;
-};
 
 function loaderIn() {
   // GSAP tween to stretch the loading screen across the whole screen
@@ -83,9 +57,3 @@ function titleButtonAnimation() {
 
 
 }
-
-// export{
-//   hideAndShow,
-//   titleAnimation,
-//   titleButtonAnimation,
-// }

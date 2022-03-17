@@ -21,7 +21,7 @@
   <!-- put here content that will not change
   between your pages, like <header> or <nav> -->
 
-  <main data-barba="container" data-barba-namespace="home">
+  <main data-barba="container" data-barba-namespace="instructions">
     <div id="Instructions">
         <div class="header">
             <h1 class="animate-this">How To Play</h1>
@@ -42,4 +42,30 @@
   <!-- put here content that will not change
   between your pages, like <footer> -->
 </body>
+<script type="text/javascript">
+    barba.init({
+        transitions: [{
+            name: 'opacity-transition',
+            from: {
+                namespace: [
+                    'home'
+                ]},
+            to: {
+                namespace: [
+                    'instructions'
+                ]},
+                leave(data) {
+                    return gsap.to(data.current.container, {
+                        opacity: 0
+                    });
+                },
+                enter(data) {
+                    return gsap.from(data.next.container, {
+                        opacity: 0
+                    });
+                },
+
+            }]
+    });
+</script>
 </html>

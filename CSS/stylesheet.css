@@ -1,13 +1,25 @@
+@font-face {
+  font-family: BibloINC;
+  src: url(/CSS/Fonts/BilboINC.ttf);
+}
+
+@font-face {
+  font-family: Exo2;
+  src: url(/CSS/Fonts/Exo2-Thin.ttf);
+}
+
+
+
 h1 {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: xx-large;
+    font-family: 'BibloINC', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 64px;
     text-align: center;
     color: lavender;
 }
 p{
   color: lavender;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: medium;
+  font-family:'Exo2', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 20px;
 }
 
 body{
