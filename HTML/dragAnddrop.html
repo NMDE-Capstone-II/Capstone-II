@@ -5,39 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shape in shape</title>
-    <link rel="stylesheet" href="/CSS/styles.css">
-    
+    <link rel="stylesheet" href="../CSS/styles.css">
+
 
 
 </head>
 
 <body>
-    <div class="container">
-        <h1>Shape in shape</h1>
-        <div class="drop-targetsSquare">  
-            <div class="itemSquare" id="itemSquare" draggable="true"></div>
-            <div class="square"></div>
+    <div id="container">
+        <div class = "top">
+            <img id="title" class="title" src="../media/ddImages/ASSEMBLE.svg">
+            <h1>Move the gems into place</h1>
         </div>
 
-        <div class="drop-targetsTriangle">
-            <div class="itemTriangle" id="itemTriangle" draggable="true"></div>
-            <div class="triangle"></div>
-        </div>
+        <!-- Square -->
+        <img id="squareGem" class="gem" src="../media/ddImages/SquareGem.svg">
+        <img id="squareSlot" class="slot" src="../media/ddImages/slot/SquareINSERT.svg">
 
-        <div class="drop-targetsCircle">
-            <div class="itemCircle" id="itemCircle" draggable="true"></div>
-            <div class="circle"></div>
-        </div>
+        <!-- Triangle -->
+        <img id="triangleGem" class="gem" src="../media/ddImages/TriangleGem.svg">
+        <img id="triangleSlot" class="slot" src="../media/ddImages/slot/TriangleINSERT.svg">
 
-        <div class="drop-targetsHexagon">
-            <div class="itemHexagon" id="itemHexagon" draggable="true"></div>
-            <div class="hexagon"></div>
-        </div>
+        <!-- Circle -->
+        <img id="circleGem" class="gem" src="../media/ddImages/CircleGem.svg">
+        <img id="circleSlot" class="slot" src="../media/ddImages/slot/CircleINSERT.svg">
+
+        <!-- Hexagon -->
+        <img id="hexagonGem" class="gem" src="../media/ddImages/HexGem.svg">
+        <img id="hexagonSlot" class="slot" src="../media/ddImages/slot/DiamondINSERT.svg">
 
         <button id="complete">Complete</button>
+        <button id="tryAgain">Try Again</button>
 
     </div>
-    <script src="/JS/dragAndDrop.js"></script>
+
+    <script src="../JS/dragAndDrop.js"></script>
 </body>
 
 </html>
