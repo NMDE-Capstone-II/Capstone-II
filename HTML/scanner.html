@@ -61,10 +61,10 @@
         <a-scene vr-mode-ui="enabled: false;"
         renderer="logarithmicDepthBuffer: true;"
         embedded
-        gesture-detector
+        gesture-detector antialias="true" outline
         arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
 
-            <a-assets>
+            <!-- <a-assets>
                 <img id="platform" src="https://i.imgur.com/mYmmbrp.jpg=">
             </a-assets>
             <a-assets>
@@ -73,23 +73,31 @@
                   src="./bowser.glb"
                 >
                 </a-asset-item>
+              </a-assets> -->
+              <a-assets>
+                <a-asset-item id="mymodel" src="./../gems/circle.gltf"></a-asset-item>
               </a-assets>
-
 
 
             <!-- handle marker with hiro preset -->
             <a-marker id="hiro" preset='hiro' registerevents emitevents='true' preset="hiro"
             raycaster="objects: .clickable" cursor="fuse: false; rayOrigin: mouse;">
-                <a-box position='0 0.5 0' material='color: red;'position="0 0 0"
+                <!-- <a-box position='0 0.5 0' material='color: red;'position="0 0 0"
                 scale="0.5 0.5 0.5"
                 class="clickable"
-                gesture-handler ></a-box>
-              
+                gesture-handler ></a-box> -->
+                <!-- <a-gltf-model src="./../gems/hexagon.gltf" gesture-handler></a-gltf-model>
+                 -->
+                 <a-entity scale="0.08 0.08 0.08">
+                    <a-entity mmd='outline: true' afterglow:2.0;>
+                      <a-entity scale="0.03 0.03 0.03" gltf-model="#mymodel"></a-entity>
+                    </a-entity>
+                  </a-entity>
                 <!-- <a-nft
                     markerhandler
                     type="nft"
-                    url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/trex-image/trex"
-                    >
+                    url="./../gems/circle.gltf"
+                    gesture-handler>
                     </a-nft> -->
                 
             </a-marker>
