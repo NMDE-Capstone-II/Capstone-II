@@ -9,29 +9,57 @@
 }
 
 
+@font-face {
+  font-family: Exo2Normal;
+  src: url(/CSS/Fonts/Exo2-Regular.ttf);
+}
+
 
 h1 {
-    font-family: 'BibloINC', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 64px;
-    text-align: center;
-    color: lavender;
+  font-family: 'BibloINC';
+
+  font-weight: 400;
+  font-size: 88px;
+  line-height: 88px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  font-feature-settings: 'zero' on;
+  
+  background: linear-gradient(172.31deg, #FFEFF5 24.87%, #FF699E 98.33%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
 }
 p{
-  color: lavender;
-  font-family:'Exo2', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 20px;
+  font-family: 'Exo2Normal';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 122%;
+/* or 24px */
+
+text-align: center;
+letter-spacing: -0.02em;
+font-feature-settings: 'zero' on;
+
+color: #E9FFFC;
+
+text-shadow: 0px 1.5px 0px #180447;
+;
 }
 
 body{
-  background-image: url(/Media/PlaceholderBG.png);
+  background-image: url(/Media/bg.svg);
   background-color: #cccccc;
   width: 100%;
   
   
 }
 
-.img{
+.titleImg{
   width: 100%;
+  padding-top: 50%;
 }
 
 .loader{
@@ -77,5 +105,10 @@ body{
   }
 
 #Instructions {
-    display: hidden;
+    padding-top: 30%;
+}
+
+.header{
+padding-bottom: 10%;
+  
 }

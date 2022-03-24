@@ -4,8 +4,3 @@
 
 //console.log("qr: " + qr);
 
-let seeHiro = true;
-
-if (seeHiro == true) {
-    console.log("Hiro is seen");
-}
