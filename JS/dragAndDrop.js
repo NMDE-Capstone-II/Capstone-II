@@ -24,20 +24,20 @@ let triangleSlot = document.getElementById('triangleSlot');
 let circleSlot = document.getElementById('circleSlot');
 let hexagonSlot = document.getElementById('hexagonSlot');
 
-let squareSlotWidth = squareSlot.clientWidth;
-let triangleSlotWidth = triangleSlot.clientWidth;
-let circleSlotWidth = circleSlot.clientWidth;
-let hexagonSlotWidth = hexagonSlot.clientWidth;
+let squareSlotWidth = squareSlot.offsetWidth;
+let triangleSlotWidth = triangleSlot.offsetWidth;
+let circleSlotWidth = circleSlot.offsetWidth;
+let hexagonSlotWidth = hexagonSlot.offsetWidth;
 
-squareSlot.style.left = (deviceWidth/2 - squareSlotWidth) +"px";
-triangleSlot.style.left = (deviceWidth/2 - triangleSlotWidth) +"px";
-circleSlot.style.left = (deviceWidth/2 - circleSlotWidth) +"px";
-hexagonSlot.style.left = (deviceWidth/2 - hexagonSlotWidth) +"px";
+squareSlot.style.left = (deviceWidth / 2 - squareSlotWidth / 2) + "px";
+triangleSlot.style.left = (deviceWidth / 2 - triangleSlotWidth / 2) + "px";
+circleSlot.style.left = (deviceWidth / 2 - circleSlotWidth / 2) + "px";
+hexagonSlot.style.left = (deviceWidth / 2 - hexagonSlotWidth / 2) + "px";
 
-squareSlot.style.top = (deviceHeight - deviceHeight/7 - (deviceHeight/6)*4) +"px";
-triangleSlot.style.top = (deviceHeight - deviceHeight/7 - (deviceHeight/6)*3) +"px";
-circleSlot.style.top = (deviceHeight - deviceHeight/7 - (deviceHeight/6)*2) +"px";
-hexagonSlot.style.top = (deviceHeight  - deviceHeight/7 - (deviceHeight/6)*1) +"px";
+squareSlot.style.top = (deviceHeight - deviceHeight / 8 - (deviceHeight / 6) * 4) + "px";
+triangleSlot.style.top = (deviceHeight - deviceHeight / 8 - (deviceHeight / 6) * 3) + "px";
+circleSlot.style.top = (deviceHeight - deviceHeight / 8 - (deviceHeight / 6) * 2) + "px";
+hexagonSlot.style.top = (deviceHeight - deviceHeight / 8 - (deviceHeight / 6) * 1) + "px";
 
 //gem positions
 let squareGem = document.getElementById('squareGem');
@@ -45,10 +45,20 @@ let triangleGem = document.getElementById('triangleGem');
 let circleGem = document.getElementById('circleGem');
 let hexagonGem = document.getElementById('hexagonGem');
 
-let squareGemWidth = squareGem.clientWidth;
-let triangleGemWidth = triangleGem.clientWidth;
-let circleGemWidth = circleGem.clientWidth;
+let squareGemWidth = squareGem.offsetWidth;
+let triangleGemWidth = triangleGem.offsetWidth;
+let circleGemWidth = circleGem.offsetWidth;
 let hexagonGemWidth = hexagonGem.clientWidth;
+
+squareGem.style.left = (deviceWidth / 2 - squareGemWidth / 2) + "px";
+triangleGem.style.left = (deviceWidth / 2 - triangleGemWidth / 2) + "px";
+circleGem.style.left = (deviceWidth / 2 - circleGemWidth / 2) + "px";
+hexagonGem.style.left = (deviceWidth / 2 - hexagonGemWidth / 2) + "px";
+
+squareGem.style.top = (deviceHeight - deviceHeight / 8 - (deviceHeight / 6) * 4) + "px";
+triangleGem.style.top = (deviceHeight - deviceHeight / 8 - (deviceHeight / 6) * 3) + "px";
+circleGem.style.top = (deviceHeight - deviceHeight / 8 - (deviceHeight / 6) * 2) + "px";
+hexagonGem.style.top = (deviceHeight - deviceHeight / 8 - (deviceHeight / 6) * 1) + "px";
 
 //onload
 window.onload = function () {
@@ -67,7 +77,7 @@ window.onload = function () {
     })
 
     //Circle
-        circleGem.addEventListener('touchmove', function (e) {
+    circleGem.addEventListener('touchmove', function (e) {
         let circleTouchLocation = e.targetTouches[0];
         circleGem.style.left = circleTouchLocation.pageX + 'px';
         circleGem.style.top = circleTouchLocation.pageY + 'px';
@@ -84,7 +94,7 @@ window.onload = function () {
 
 //Square
 squareGem.addEventListener('touchend', function (e) {
-    let squareSlotX =  parseInt((deviceWidth/2 - squareSlotWidth/2) +"px");
+    let squareSlotX = parseInt(squareSlot.style.left);
     let squareSlotY = parseInt(squareSlot.style.top);
 
     let squareGemX = parseInt(squareGem.style.left);
@@ -93,54 +103,81 @@ squareGem.addEventListener('touchend', function (e) {
     let squareSlotXBound = squareSlotX + squareSlotWidth;
     let squareSlotYBound = squareSlotY + squareSlotWidth;
 
-    let squareGemXBound = squareGemX + squareGemWidth/2;
-    let squareGemYBound = squareGemY + squareGemWidth/2;
+    let squareGemXBound = squareGemX + squareGemWidth / 2;
+    let squareGemYBound = squareGemY + squareGemWidth / 2;
 
-    console.log(squareSlotY, squareSlotYBound, squareSlotWidth);
-
-
-    // if (squareGemXBound>=squareSlotX && squareGemXBound<=squareSlotXBound) {
-    //     console.log("true");
-    // } else {
-    //     console.log("false");
-    // }
-    if (squareGemYBound>=squareSlotY && squareGemYBound<=squareSlotYBound) {
-        console.log("true");
+    if (squareGemXBound >= squareSlotX && squareGemXBound <= squareSlotXBound && squareGemYBound >= squareSlotY && squareGemYBound <= squareSlotYBound) {
+        console.log("square true");
     } else {
-        console.log("false");
+        console.log("square false");
     }
 
 })
 
 //Triangle
 triangleGem.addEventListener('touchend', function (e) {
-    let triangleX = parseInt(triangleGem.style.left);
-    let triangleY = parseInt(triangleGem.style.top);
+    let triangleSlotX = parseInt(triangleSlot.style.left);
+    let triangleSlotY = parseInt(triangleSlot.style.top);
 
-    console.log(triangleX, triangleY);
+    let triangleGemX = parseInt(triangleGem.style.left);
+    let triangleGemY = parseInt(triangleGem.style.top);
+
+    let triangleSlotXBound = triangleSlotX + triangleSlotWidth;
+    let triangleSlotYBound = triangleSlotY + triangleSlotWidth;
+
+    let triangleGemXBound = triangleGemX + triangleGemWidth / 2;
+    let triangleGemYBound = triangleGemY + triangleGemWidth / 2;
+
+    if (triangleGemXBound >= triangleSlotX && triangleGemXBound <= triangleSlotXBound && triangleGemYBound >= triangleSlotY && triangleGemYBound <= triangleSlotYBound) {
+        console.log("triangle true");
+    } else {
+        console.log("triangle false");
+    }
 
 })
 
 //Circle
 circleGem.addEventListener('touchend', function (e) {
-    let circleX = parseInt(circleGem.style.left);
-    let circleY = parseInt(circleGem.style.top);
+    let circleSlotX = parseInt(circleSlot.style.left);
+    let circleSlotY = parseInt(circleSlot.style.top);
 
-    console.log(circleX, circleY);
+    let circleGemX = parseInt(circleGem.style.left);
+    let circleGemY = parseInt(circleGem.style.top);
+
+    let circleSlotXBound = circleSlotX + circleSlotWidth;
+    let circleSlotYBound = circleSlotY + circleSlotWidth;
+
+    let circleGemXBound = circleGemX + circleGemWidth / 2;
+    let circleGemYBound = circleGemY + circleGemWidth / 2;
+
+    if (circleGemXBound >= circleSlotX && circleGemXBound <= circleSlotXBound && circleGemYBound >= circleSlotY && circleGemYBound <= circleSlotYBound) {
+        console.log("circle true");
+    } else {
+        console.log("circle false");
+    }
 
 })
 
 //Hexagon
 hexagonGem.addEventListener('touchend', function (e) {
-    let hexagonX = parseInt(hexagonGem.style.left);
-    let hexagonY = parseInt(hexagonGem.style.top);
+    let hexagonSlotX = parseInt(hexagonSlot.style.left);
+    let hexagonSlotY = parseInt(hexagonSlot.style.top);
 
-    console.log("hexagon" + hexagonX, hexagonY);
+    let hexagonGemX = parseInt(hexagonGem.style.left);
+    let hexagonGemY = parseInt(hexagonGem.style.top);
 
-    let hexagonSlotX = hexagonSlot.style.left;
-    let hexagonSlotY = hexagonSlot.style.top;
-    console.log("hexagonSlot" + hexagonSlotX, hexagonSlotY);
-    
+    let hexagonSlotXBound = hexagonSlotX + hexagonSlotWidth;
+    let hexagonSlotYBound = hexagonSlotY + hexagonSlotWidth;
+
+    let hexagonGemXBound = hexagonGemX + hexagonGemWidth / 2;
+    let hexagonGemYBound = hexagonGemY + hexagonGemWdth / 2;
+
+    if (hexagonGemXBound >= hexagonSlotX && hexagonGemXBound <= hexagonSlotXBound && hexagonGemYBound >= hexagonSlotY && hexagonGemYBound <= hexagonSlotYBound) {
+        console.log("hexagon true");
+    } else {
+        console.log("hexagon false");
+    }
+
 })
 
 // /* draggable element */
