@@ -50,12 +50,19 @@ text-shadow: 0px 1.5px 0px #180447;
 }
 
 body{
-  background-image: url(/Media/bg.svg);
+  background-image: url(./../Media/bg.svg);
   background-color: #cccccc;
   width: 100%;
   
   
 }
+
+#scannerTitle{
+  text-align: center;
+  margin-right: 10%;
+}
+
+
 
 .titleImg{
   width: 100%;
