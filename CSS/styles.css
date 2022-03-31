@@ -16,7 +16,7 @@ body {
     font-size: 16px;
     overflow: hidden;
 
-    background-image: url("../media/ddImages/Background.svg");
+    background-image: url("../media/ddImages/screen/crystalBackground.png");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -46,12 +46,22 @@ img.slot {
     width: 10vh;
 }
 img.gem {
-    height: 18vh;
+    width: 12vh;
+}
+.tryAgain {
+    width: 10px;
 }
 
 .top {
-    margin-bottom: 70vh;
+    margin-top: 5vh;
     text-align: center;
+}
+
+.bottom {
+    text-align: center;
+
+    border: solid 2px red;
+
 }
 
 .hide {
@@ -66,7 +76,7 @@ img.gem {
     align-items: center;
     margin: 5px;
 
-    background-image: url("../media/ddImages/BackCrystal-Default.png");
+    background-image: url("../media/ddImages/screen/crystalDim.png");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -77,45 +87,37 @@ img.gem {
 /* Square */
 #squareGem {
     position: absolute;
-    border: 2px solid green;
 }
 
 #squareSlot {
     position: absolute;
-    border: 2px solid limegreen;
 }
 
 /* Triangle */
 #triangleGem {
     position: absolute;
-    border: 2px solid red;
 }
 
 #triangleSlot {
     position: absolute;
-    border: 2px solid orange;
 }
 
 /* Circle */
 #circleGem {
     position: absolute;
-    border: 2px solid blueviolet;
 }
 
 #circleSlot {
     position: absolute;
-    border: 2px solid purple;
 }
 
 /* Hexagon */
 #hexagonGem {
     position: absolute;
-    border: 2px solid blue;
 }
 
 #hexagonSlot {
     position: absolute;
-    border: 2px solid lightskyblue;
 }
 
 
