@@ -255,10 +255,26 @@ hexagonGem.addEventListener('touchend', function (e) {
 
 /** Buttons */
 
+let delayTimer = 5000; //5 second
+
 function completeButton() {
     if (squareFilledBool == true && triangleFilledBool == true && circleFilledBool == true && hexagonFilledBool == true) {
         document.getElementById('complete').style.visibility = 'visible';
         document.getElementById('container').style.backgroundImage = "url(../media/ddImages/screen/crystalBright.png)";
+
+        setTimeout(function() {
+            if(slotsArray[0] == squareSlot) {
+                window.location.href = "../HTML/earthQrCode.html";
+            } else if (slotsArray[0] == triangleSlot) {
+                window.location.href = "../HTML/fireQrCode.html";
+            } else if (slotsArray[0] == circleSlot) {
+                window.location.href = "../HTML/airQrCode.html";
+            }else { //hexagon
+                window.location.href = "../HTML/fwaterQrCode.html";
+            }
+
+        }, delayTimer);
+
     } else {
         document.getElementById('complete').style.visibility = 'hidden';
     }
