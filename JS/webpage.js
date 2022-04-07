@@ -39,8 +39,8 @@ function titleAnimation() {
   });
 
   gsap.to('#titleScreenImage', {
-    rotate: 360,
-    duration: 2
+    fade: 360,
+    duration: 1
   });
 
 
