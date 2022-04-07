@@ -1,17 +1,17 @@
 @font-face {
   font-family: BibloINC;
-  src: url(/CSS/Fonts/BilboINC.ttf);
+  src: url(./../CSS/Fonts/BilboINC.ttf);
 }
 
 @font-face {
   font-family: Exo2;
-  src: url(/CSS/Fonts/Exo2-Thin.ttf);
+  src: url(./../CSS/Fonts/Exo2-Thin.ttf);
 }
 
 
 @font-face {
   font-family: Exo2Normal;
-  src: url(/CSS/Fonts/Exo2-Regular.ttf);
+  src: url(./../CSS/Fonts/Exo2-Regular.ttf);
 }
 
 
