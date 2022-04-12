@@ -131,7 +131,7 @@ squareGem.addEventListener('touchend', function (e) {
 
     if (squareGemXBound >= squareSlotX && squareGemXBound <= squareSlotXBound && squareGemYBound >= squareSlotY && squareGemYBound <= squareSlotYBound) {
 
-        squareSlot.src = "./../media/ddImages/filled/squareFilled.png";
+        squareSlot.src = "./../Media/ddImages/filled/squareFilled.png";
         squareGem.style.visibility = 'hidden';
         squareSlot.style.width = '16vh';
         squareSlot.style.marginLeft = '-3vh';
@@ -166,7 +166,7 @@ triangleGem.addEventListener('touchend', function (e) {
 
     if (triangleGemXBound >= triangleSlotX && triangleGemXBound <= triangleSlotXBound && triangleGemYBound >= triangleSlotY && triangleGemYBound <= triangleSlotYBound) {
 
-        triangleSlot.src = "./../media/ddImages/filled/triangleFilled.png";
+        triangleSlot.src = "./../Media/ddImages/filled/triangleFilled.png";
         triangleGem.style.visibility = 'hidden';
         triangleSlot.style.width = '16vh';
         triangleSlot.style.marginLeft = '-3vh';
@@ -201,7 +201,7 @@ circleGem.addEventListener('touchend', function (e) {
 
     if (circleGemXBound >= circleSlotX && circleGemXBound <= circleSlotXBound && circleGemYBound >= circleSlotY && circleGemYBound <= circleSlotYBound) {
 
-        circleSlot.src = "./../media/ddImages/filled/circleFilled.png";
+        circleSlot.src = "./../Media/ddImages/filled/circleFilled.png";
         circleGem.style.visibility = 'hidden';
         circleSlot.style.width = '16vh';
         circleSlot.style.marginLeft = '-3vh';
@@ -236,7 +236,7 @@ hexagonGem.addEventListener('touchend', function (e) {
 
     if (hexagonGemXBound >= hexagonSlotX && hexagonGemXBound <= hexagonSlotXBound && hexagonGemYBound >= hexagonSlotY && hexagonGemYBound <= hexagonSlotYBound) {
 
-        hexagonSlot.src = "./../media/ddImages/filled/hexagonFilled.png";
+        hexagonSlot.src = "./../Media/ddImages/filled/hexagonFilled.png";
         hexagonGem.style.visibility = 'hidden';
         hexagonSlot.style.width = '16vh';
         hexagonSlot.style.marginLeft = '-3vh';
@@ -262,7 +262,7 @@ let delayTimer = 3000; //3 second
 function completeButton() {
     if (squareFilledBool == true && triangleFilledBool == true && circleFilledBool == true && hexagonFilledBool == true) {
         assembled = true;
-        document.getElementById('container').style.backgroundImage = "url(./../media/ddImages/screen/crystalBright.png)";
+        document.getElementById('container').style.backgroundImage = "url(./../Media/ddImages/screen/crystalBright.png)";
 
         setTimeout(function() {
             if(slotsArray[0] == squareSlot) {
