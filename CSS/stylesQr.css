@@ -47,8 +47,17 @@ h1 {
 
 #QrCode {
     text-align: center;
+    margin-top: 10vh;
 }
 
 img.title {
     width: 28vh;
+}
+
+img.qrImage {
+    width: 40vh;
+}
+
+img.swordImage {
+    width: 40vh;
 }
