@@ -19,7 +19,7 @@ body {
 
 @font-face {
     font-family: exo;
-    src: url(./../Fonts/Exo2-Regular.ttf);
+    src: url(./Fonts/Exo2-Regular.ttf);
 }
 
 h1 {

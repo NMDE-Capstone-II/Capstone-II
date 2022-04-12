@@ -55,66 +55,42 @@
 
 
 
-    <body style='margin : 0px; overflow: hidden;'>
-        <a-scene vr-mode-ui="enabled: false;"
-        renderer="logarithmicDepthBuffer: true;"
-        embedded
-        gesture-detector antialias="true" outline
-        arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+<body style='margin : 0px; overflow: hidden;'>
+    <a-scene vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer: true;"
+    embedded
+    gesture-detector antialias="true" outline
+    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
 
-            <!-- <a-assets>
-                <img id="platform" src="https://i.imgur.com/mYmmbrp.jpg=">
-            </a-assets>
+        
             <a-assets>
-                <a-asset-item
-                  id="bowser"
-                  src="./bowser.glb"
-                >
-                </a-asset-item>
-              </a-assets> -->
-              <a-assets>
-                <a-asset-item id="mymodel" src="./../gems/circle.gltf"></a-asset-item>
-              </a-assets>
+            <a-asset-item id="mymodel1" src="./../gems/circle.gltf"></a-asset-item>
+            <a-asset-item id="mymodel2" src="./../gems/triangle.gltf"></a-asset-item>
+            <a-asset-item id="mymodel3" src="./../gems/hexagon.gltf"></a-asset-item>
+            <a-asset-item id="mymodel4" src="./../gems/square.gltf"></a-asset-item>
+            </a-assets>
 
 
-            <!-- handle marker with hiro preset -->
-            <a-marker id="hiro" preset='hiro' registerevents emitevents='true' preset="hiro"
-            raycaster="objects: .clickable" cursor="fuse: false; rayOrigin: mouse;">
-            <!-- <a-entity
-            position="0 0 0"
-            scale="0.05 0.05 0.05"
-            gltf-model="url(./../)"
-          ></a-entity> -->
-                <!-- <a-box position='0 0.5 0' material='color: red;'position="0 0 0"
-                scale="0.5 0.5 0.5"
-                class="clickable"
-                gesture-handler ></a-box> -->
-                <a-entity position="0 0 0" gltf-model="#mymodel" scale="0.01 0.01 0.01"></a-entity>
-                 <!-- <a-entity scale="0.08 0.08 0.08">
-                    <a-entity mmd='outline: true' afterglow:2.0;>
-                      <a-entity scale="0.03 0.03 0.03" gltf-model="#mymodel"></a-entity>
-                    </a-entity>
-                  </a-entity> -->
-                <!-- <a-nft
-                    markerhandler
-                    type="nft"
-                    url="./../gems/circle.gltf"
-                    gesture-handler>
-                    </a-nft> -->
-                
-            </a-marker>
+        <!-- handle marker with hiro preset -->
+        <!-- <a-marker id="hiro" preset='hiro' registerevents emitevents='true'
+        raycaster="objects: .clickable" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity position="0 0 0" gltf-model="#mymodel1" scale="0.01 0.01 0.01"></a-entity>
+        </a-marker> -->
+        <a-marker patternUrl="./../markers/pattern-GEM-Circle2.patt" registerevents emitevents='true'
+        raycaster="objects: .clickable" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity position="0 0 0" gltf-model="#mymodel1" scale="0.01 0.01 0.01"></a-entity>
+        </a-marker>
 
-            <!-- handle barcode marker -->
-            <a-marker type='barcode' value='5'>
+        <!-- handle barcode marker -->
+        <a-marker id="kanji" preset="kanji" registerevents emitevents='true' 
+        raycaster="objects: .clickable" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity position="0 0 0" gltf-model="#mymodel2" scale="0.01 0.01 0.01"></a-entity>
+        </a-marker>
 
-            </a-marker>
+        <!-- add a simple camera -->
+        <a-entity camera></a-entity>
+    </a-scene>
 
-
-
-            <!-- add a simple camera -->
-            <a-entity camera></a-entity>
-        </a-scene>
-
-    </body>
+</body>
 
 </html>

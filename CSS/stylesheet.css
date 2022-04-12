@@ -125,6 +125,7 @@ body{
 .tabbedInstuctions {
   overflow: hidden;
   background-color: #f1f1f1;
+  background-image: url(./../Media/Back.png);
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -146,7 +147,7 @@ body{
 /* Create an active/current tablink class */
 .tabbedInstuctions button.active {
   background-color: #ccc;
-  visibility: hidden;
+  
 }
 
 /* Style the tab content */
@@ -155,7 +156,8 @@ body{
   padding: 6px 12px;
   border-top: none;
   animation: fadeEffect 1s; /* Fading effect takes 1 second */
-  visibility: hidden;
+  background-image: url(./../Media/Back.png);
+ 
 
 }
 
