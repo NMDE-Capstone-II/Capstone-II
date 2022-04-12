@@ -72,7 +72,11 @@
 
 
         <!-- handle marker with hiro preset -->
-        <a-marker id="hiro" preset='hiro' registerevents emitevents='true'
+        <!-- <a-marker id="hiro" preset='hiro' registerevents emitevents='true'
+        raycaster="objects: .clickable" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity position="0 0 0" gltf-model="#mymodel1" scale="0.01 0.01 0.01"></a-entity>
+        </a-marker> -->
+        <a-marker patternUrl="./../markers/pattern-GEM-Circle2.patt" registerevents emitevents='true'
         raycaster="objects: .clickable" cursor="fuse: false; rayOrigin: mouse;">
             <a-entity position="0 0 0" gltf-model="#mymodel1" scale="0.01 0.01 0.01"></a-entity>
         </a-marker>
