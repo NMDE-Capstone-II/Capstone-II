@@ -27,19 +27,19 @@ function changeImage() {
 
         //fire
         if (document.URL.includes("fireQrCode.html")) {
-            document.getElementById('QrCode').innerHTML = `<a href = "./../Media/cards/cardPlaceholder.png" download><img class = "qrImage" src="./../Media/cards/cardPlaceholder.png" alt="Fire Sword"></img></a>`;
+            document.getElementById('QrCode').innerHTML = `<img class = "qrImage" src="./../Media/cards/fireSword.png" alt="Fire Sword"></img>`;
         }
         //earth
         else if (document.URL.includes("earthQrCode.html")) {
-            document.getElementById('QrCode').innerHTML = `<a href = "./../Media/cards/cardPlaceholder.png" download><img class = "qrImage" src="./../Media/cards/cardPlaceholder.png" alt="Earth Sword"></img></a>`;
+            document.getElementById('QrCode').innerHTML = `<img class = "qrImage" src="./../Media/cards/earthSword.png" alt="Earth Sword"></img>`;
         }
         //air
         else if (document.URL.includes("airQrCode.html")) {
-            document.getElementById('QrCode').innerHTML = `<a href = "./../Media/cards/cardPlaceholder.png" download><img class = "qrImage" src="./../Media/cards/cardPlaceholder.png" alt="Air Sword"></img></a>`;
+            document.getElementById('QrCode').innerHTML = `<img class = "qrImage" src="./../Media/cards/airSword.png" alt="Air Sword"></img>`;
         }
         //water
         else {
-            document.getElementById('QrCode').innerHTML = `<a href = "./../Media/cards/cardPlaceholder.png" download><img class = "qrImage" src="./../Media/cards/cardPlaceholder.png" alt="Water Sword"></img></a>`;
+            document.getElementById('QrCode').innerHTML = `<img class = "qrImage" src="./../Media/cards/waterSword.png" alt="Water Sword"></img>`;
         }
         document.getElementById('QrCode').style.marginTop = "0vh";
 

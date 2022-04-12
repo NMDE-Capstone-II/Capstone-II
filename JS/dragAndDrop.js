@@ -13,6 +13,8 @@ let triangleFilledBool = false;
 let circleFilledBool = false;
 let hexagonFilledBool = false;
 
+let assembled = false;
+
 completeButton();
 tryAgainButton();
 
@@ -44,7 +46,7 @@ let triangleSlot = document.getElementById('triangleSlot');
 let circleSlot = document.getElementById('circleSlot');
 let hexagonSlot = document.getElementById('hexagonSlot');
 
-let slotWidth = squareSlot.offsetWidth; //all slot have same width and height
+let slotWidth = squareSlot.offsetWidth;
 
 let slotsArray=[squareSlot, triangleSlot, circleSlot, hexagonSlot];
 ranomize(slotsArray);
@@ -65,15 +67,15 @@ let triangleGem = document.getElementById('triangleGem');
 let circleGem = document.getElementById('circleGem');
 let hexagonGem = document.getElementById('hexagonGem');
 
-let gemWidth = squareGem.offsetWidth; //all gems have same width and height
+let gemWidth = squareGem.offsetWidth;
 
 let gemsArray = [squareGem, triangleGem, circleGem, hexagonGem]
 ranomize(gemsArray);
 
-gemsArray[0].style.left = (deviceWidth / 2 - gemWidth * 2.3) + "px";
-gemsArray[1].style.left = (deviceWidth / 2 + gemWidth) + "px";
-gemsArray[2].style.left = (deviceWidth / 2 - gemWidth * 1.8) + "px";
-gemsArray[3].style.left = (deviceWidth / 2 + gemWidth * 1.2) + "px";
+gemsArray[0].style.left = (deviceWidth / 2 - deviceWidth / 7 * 2.5) + "px";
+gemsArray[1].style.left = (deviceWidth / 2 + deviceWidth / 7) + "px";
+gemsArray[2].style.left = (deviceWidth / 2 - deviceWidth / 7 * 3) + "px";
+gemsArray[3].style.left = (deviceWidth / 2 + deviceWidth / 7 * 1.7) + "px";
 
 gemsArray[0].style.top = (deviceHeight - deviceHeight / 12 - (deviceHeight / 6) * 4) + "px";
 gemsArray[1].style.top = (deviceHeight - deviceHeight / 10 - (deviceHeight / 6) * 3) + "px";
@@ -129,7 +131,7 @@ squareGem.addEventListener('touchend', function (e) {
 
     if (squareGemXBound >= squareSlotX && squareGemXBound <= squareSlotXBound && squareGemYBound >= squareSlotY && squareGemYBound <= squareSlotYBound) {
 
-        squareSlot.src = "../media/ddImages/filled/squareFilled.png";
+        squareSlot.src = "./../media/ddImages/filled/squareFilled.png";
         squareGem.style.visibility = 'hidden';
         squareSlot.style.width = '16vh';
         squareSlot.style.marginLeft = '-3vh';
@@ -164,7 +166,7 @@ triangleGem.addEventListener('touchend', function (e) {
 
     if (triangleGemXBound >= triangleSlotX && triangleGemXBound <= triangleSlotXBound && triangleGemYBound >= triangleSlotY && triangleGemYBound <= triangleSlotYBound) {
 
-        triangleSlot.src = "../media/ddImages/filled/triangleFilled.png";
+        triangleSlot.src = "./../media/ddImages/filled/triangleFilled.png";
         triangleGem.style.visibility = 'hidden';
         triangleSlot.style.width = '16vh';
         triangleSlot.style.marginLeft = '-3vh';
@@ -199,7 +201,7 @@ circleGem.addEventListener('touchend', function (e) {
 
     if (circleGemXBound >= circleSlotX && circleGemXBound <= circleSlotXBound && circleGemYBound >= circleSlotY && circleGemYBound <= circleSlotYBound) {
 
-        circleSlot.src = "../media/ddImages/filled/circleFilled.png";
+        circleSlot.src = "./../media/ddImages/filled/circleFilled.png";
         circleGem.style.visibility = 'hidden';
         circleSlot.style.width = '16vh';
         circleSlot.style.marginLeft = '-3vh';
@@ -234,7 +236,7 @@ hexagonGem.addEventListener('touchend', function (e) {
 
     if (hexagonGemXBound >= hexagonSlotX && hexagonGemXBound <= hexagonSlotXBound && hexagonGemYBound >= hexagonSlotY && hexagonGemYBound <= hexagonSlotYBound) {
 
-        hexagonSlot.src = "../media/ddImages/filled/hexagonFilled.png";
+        hexagonSlot.src = "./../media/ddImages/filled/hexagonFilled.png";
         hexagonGem.style.visibility = 'hidden';
         hexagonSlot.style.width = '16vh';
         hexagonSlot.style.marginLeft = '-3vh';
@@ -255,33 +257,33 @@ hexagonGem.addEventListener('touchend', function (e) {
 
 /** Buttons */
 
-let delayTimer = 5000; //5 second
+let delayTimer = 3000; //3 second
 
 function completeButton() {
     if (squareFilledBool == true && triangleFilledBool == true && circleFilledBool == true && hexagonFilledBool == true) {
-        document.getElementById('complete').style.visibility = 'visible';
-        document.getElementById('container').style.backgroundImage = "url(../media/ddImages/screen/crystalBright.png)";
+        assembled = true;
+        document.getElementById('container').style.backgroundImage = "url(./../media/ddImages/screen/crystalBright.png)";
 
         setTimeout(function() {
             if(slotsArray[0] == squareSlot) {
-                window.location.href = "../HTML/earthQrCode.html";
+                window.location.href = "./../HTML/earthQrCode.html";
             } else if (slotsArray[0] == triangleSlot) {
-                window.location.href = "../HTML/fireQrCode.html";
+                window.location.href = "./../HTML/fireQrCode.html";
             } else if (slotsArray[0] == circleSlot) {
-                window.location.href = "../HTML/airQrCode.html";
+                window.location.href = "./../HTML/airQrCode.html";
             }else { //hexagon
-                window.location.href = "../HTML/fwaterQrCode.html";
+                window.location.href = "./../HTML/waterQrCode.html";
             }
 
         }, delayTimer);
 
     } else {
-        document.getElementById('complete').style.visibility = 'hidden';
+        assembled = false;
     }
 }
 
 function tryAgainButton() {
-    if (document.getElementById('complete').style.visibility == 'visible') {
+    if (assembled == true) {
         document.getElementById('tryAgain').style.visibility = 'hidden';
     } else {
         document.getElementById('tryAgain').style.visibility = 'visible';

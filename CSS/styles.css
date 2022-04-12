@@ -48,8 +48,8 @@ img.slot {
 img.gem {
     width: 12vh;
 }
-.tryAgain {
-    width: 10px;
+#tryAgain {
+    width: 20vh;
 }
 
 .top {
@@ -117,95 +117,4 @@ img.gem {
 
 #hexagonSlot {
     position: absolute;
-}
-
-
-
-
-
-.drop-targetsSquare {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-
-    margin: 5px;
-}
-
-.drop-targetsTriangle {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-
-    margin: 5px;
-}
-
-.drop-targetsCircle {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-
-    margin: 5px;
-}
-
-.drop-targetsHexagon {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-
-    margin: 5px;
-}
-
-.square {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 5px;
-
-    /* height: 100px;
-    width: 100px;
-    border: solid 3px green; */
-
-}
-
-.triangle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 5px;
-
-    /* height: 100px;
-    width: 100px;
-    border: solid 3px red; */
-}
-
-.circle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 5px;
-
-    /* height: 100px;
-    width: 100px;
-    border: solid 3px purple; */
-
-}
-
-.hexagon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 5px;
-
-    /* height: 100px;
-    width: 100px;
-    border: solid 3px blue; */
-
 }
