@@ -16,7 +16,7 @@ body {
     font-size: 16px;
     overflow: hidden;
 
-    background-image: url("../media/ddImages/screen/crystalBackground.png");
+    background-image: url("./../Media/ddImages/screen/crystalBackground.png");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -27,7 +27,7 @@ body {
 
 @font-face {
     font-family: exo;
-    src: url(Fonts/Exo2-Regular.ttf);
+    src: url(./../Fonts/Exo2-Regular.ttf);
 }
 
 h1 {
@@ -75,7 +75,7 @@ img.gem {
     align-items: center;
     margin: 5px;
 
-    background-image: url("../media/ddImages/screen/crystalDim.png");
+    background-image: url("./../Media/ddImages/screen/crystalDim.png");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
