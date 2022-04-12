@@ -35,20 +35,50 @@ h1 {
     text-align: center;
 }
 
-/* #container {
-    height: 100vh;
+#container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 5px;
-
-} */
+}
 
 #QrCode {
     text-align: center;
+    margin-top: 10vh;
 }
 
 img.title {
     width: 28vh;
+}
+
+img.qrImage {
+    width: 38vh;
+}
+
+img.swordImage {
+    width: 38vh;
+}
+
+#toSword {
+    margin-top: 5vh;
+    width: 25vh;
+}
+
+#toQr {
+    margin-top: 0vh;
+    width: 10vh;
+}
+
+#download {
+    margin-top: 0vh;
+    width: 30vh;
+}
+
+.ssButtons {
+    display: flex;
+}
+
+.ssButton {
+    flex: 50%;
+    padding: 5px;
 }
