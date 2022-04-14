@@ -35,11 +35,11 @@ p{
   font-family: 'Exo2Normal';
 font-style: normal;
 font-weight: 400;
-font-size: 20px;
+font-size: 25px;
 line-height: 122%;
 /* or 24px */
 
-text-align: center;
+
 letter-spacing: -0.02em;
 font-feature-settings: 'zero' on;
 
@@ -53,7 +53,7 @@ body{
   background-image: url(./../Media/bg.svg);
   background-color: #cccccc;
   width: 100%;
-  
+  touch-action: none;
   
 }
 
@@ -96,7 +96,7 @@ body{
   }
   
   .center {
-    padding-top: 50%;
+    padding-top: 30%;
     margin: 0;
     position: absolute;
     top: 50%;
@@ -112,57 +112,29 @@ body{
     transform: translateX(100%);
   }
 
-#Instructions {
-    padding-top: 10%;
+
+
+#alignment{
+  padding-top: 16%;
+
+  margin: 16%;
+  text-align: left;
 }
 
-.header{
-
+.Instructional {
   
-}
-
-/* Style the tab */
-.tabbedInstuctions {
-  overflow: hidden;
-  background-color: #f1f1f1;
   background-image: url(./../Media/Back.png);
-}
-
-/* Style the buttons that are used to open the tab content */
-.tabbedInstuctions button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-}
-
-/* Change background color of buttons on hover */
-.tabbedInstuctions button:hover {
-  background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-.tabbedInstuctions button.active {
-  background-color: #ccc;
-  
-}
-
-/* Style the tab content */
-.tabContent {
-  display: none;
-  padding: 6px 12px;
-  border-top: none;
-  animation: fadeEffect 1s; /* Fading effect takes 1 second */
-  background-image: url(./../Media/Back.png);
- 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+    width: 40vh;
+    height: 40vh;
 
 }
 
-/* Go from zero to full opacity */
-@keyframes fadeEffect {
-  from {opacity: 0;}
-  to {opacity: 1;}
+.startingText{
+  padding-bottom: 20%;
+}
+.startButton{
+  align-content: center;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,63 +15,44 @@
     <title>How To Play</title>
 
 </head>
+
 <body data-barba="wrapper">
     <div class="load-container">
         <div class="loading-screen"></div>
     </div>
-  <!-- put here content that will not change
+    <!-- put here content that will not change
   between your pages, like <header> or <nav> -->
-
-  <main data-barba="container" data-barba-namespace="instructions">
-    <div id="Instructions">
+>
+    <main data-barba="container" data-barba-namespace="instructions">    
+        <a href='./../HTML/index.html'><img src="./../Media/Back-icon.svg"></a>
         <div class="header">
             <h1 class="animate-this">How To Play</h1>
         </div>
-        
+
         <div class="container">
-            <p>A collection of stones is what you must seek, for then your true sword shall be complete.</p>
-
-            <div class="tabbedInstuctions">
-                <button class="tablinks" onclick="instructional(event, 'stepOne')" id="defaultOpen">Step One</button>
-                <button class="tablinks" onclick="instructional(event, 'stepTwo')">Step Two</button>
-                <button class="tablinks" onclick="instructional(event, 'stepThree')">Step Three</button>
-                <button class="tablinks" onclick="instructional(event, 'stepFour')">Step Four</button>
-
-            </div>
+           
 
             <div class="center">
+                <div class="Instructional">
+                    <div id="alignment">
+                        <p>Look for shapes that contain gems</p>
+
+                        <p>Return power to the crystal once you scan all four gems</p>
+                    </div>
+                        
     
-
-                <div id="stepOne" class="tabContent">
-                    <H3>Step One</H3>
-                    <p>Look for distinct shapes around the building</p>
                 </div>
 
-                <div id="stepTwo" class="tabContent">
-                    <h3>Step Two</h3>
-                    <p>Find the gem upon the shape and scan it</p>
-                </div>
-
-                <div id="stepThree" class="tabContent">
-                    <h3>Step Three</h3>
-                    <p>Find four distinct gems</p>
-                </div>
-
-                <div id="stepFour" class="tabContent">
-                    <h3>Step Four</h3>
-                    <p>Use the gems to return power to the Crystal</p>
-                </div>
+                <a href='./../HTML/scanner.html'><img id="startButton" src="./../Media/StartButton.svg"></a><br>
+                
             
-                <a href='./../HTML/scanner.html'><img src="./../Media/StartButton.svg"></a>
-                <a href='./../HTML/index.html'><img src="./../Media/Back-icon.svg"></a>
-                <a href='./../HTML/dragAnddrop.html'><button>JS Test</button></a>
                 
             </div>
         </div>
-    </div>
-  </main>
 
-  <!-- put here content that will not change
+    </main>
+
+    <!-- put here content that will not change
   between your pages, like <footer> -->
 </body>
 
