@@ -87,29 +87,29 @@ window.onload = function () {
     //Square
     squareGem.addEventListener('touchmove', function (e) {
         let squareTouchLocation = e.targetTouches[0];
-        squareGem.style.left = squareTouchLocation.pageX + 'px';
-        squareGem.style.top = squareTouchLocation.pageY + 'px';
+        squareGem.style.left = squareTouchLocation.pageX - gemWidth/2 + 'px';
+        squareGem.style.top = squareTouchLocation.pageY - gemWidth/2 + 'px';
     })
 
     //Triangle
     triangleGem.addEventListener('touchmove', function (e) {
         let triangleTouchLocation = e.targetTouches[0];
-        triangleGem.style.left = triangleTouchLocation.pageX + 'px';
-        triangleGem.style.top = triangleTouchLocation.pageY + 'px';
+        triangleGem.style.left = triangleTouchLocation.pageX - gemWidth/2 + 'px';
+        triangleGem.style.top = triangleTouchLocation.pageY - gemWidth/2 + 'px';
     })
 
     //Circle
     circleGem.addEventListener('touchmove', function (e) {
         let circleTouchLocation = e.targetTouches[0];
-        circleGem.style.left = circleTouchLocation.pageX + 'px';
-        circleGem.style.top = circleTouchLocation.pageY + 'px';
+        circleGem.style.left = circleTouchLocation.pageX - gemWidth/2 + 'px';
+        circleGem.style.top = circleTouchLocation.pageY - gemWidth/2 + 'px';
     })
 
     //Hexagon
     hexagonGem.addEventListener('touchmove', function (e) {
         let hexagonTouchLocation = e.targetTouches[0];
-        hexagonGem.style.left = hexagonTouchLocation.pageX + 'px';
-        hexagonGem.style.top = hexagonTouchLocation.pageY + 'px';
+        hexagonGem.style.left = hexagonTouchLocation.pageX - gemWidth/2 + 'px';
+        hexagonGem.style.top = hexagonTouchLocation.pageY - gemWidth/2 + 'px';
     })
 
 }

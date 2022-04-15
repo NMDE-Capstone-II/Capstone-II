@@ -53,28 +53,32 @@ function changeDoc() {
             document.getElementById('content').innerHTML = `<img class = "qrImage" src="./../Media/cards/fireSword.png" alt="Fire Sword"></img>`;
 
             document.getElementById('ssButtons').innerHTML = `<img id="back" class ="ssButton" src = "./../Media/buttons/BackButtonIcon.png">
-            <a href = "./../Media/cards/fireSword.png" download><img id="download" class ="ssButton" src = "./../Media/DownloadButton.png"></a>`
+            <a href = "./../Media/cards/fireSword.png" download><img id="download" class ="ssButton" src = "./../Media/DownloadButton.png"></a>
+            <img id="playAgain" class ="ssButton" src = "./../Media/buttons/PlayAgainButton.png">`
         }
         //earth
         else if (document.URL.includes("earthQrCode.html")) {
             document.getElementById('content').innerHTML = `<img class = "qrImage" src="./../Media/cards/earthSword.png" alt="Earth Sword"></img>`;
 
             document.getElementById('ssButtons').innerHTML = `<img id="back" class ="ssButton" src = "./../Media/buttons/BackButtonIcon.png">
-            <a href = "./../Media/cards/earthSword.png" download><img id="download" class ="ssButton" src = "./../Media/DownloadButton.png"></a>`
+            <a href = "./../Media/cards/earthSword.png" download><img id="download" class ="ssButton" src = "./../Media/DownloadButton.png"></a>
+            <img id="playAgain" class ="ssButton" src = "./../Media/buttons/PlayAgainButton.png">`
         }
         //air
         else if (document.URL.includes("airQrCode.html")) {
             document.getElementById('content').innerHTML = `<img class = "qrImage" src="./../Media/cards/airSword.png" alt="Air Sword"></img>`;
 
             document.getElementById('ssButtons').innerHTML = `<img id="back" class ="ssButton" src = "./../Media/buttons/BackButtonIcon.png">
-            <a href = "./../Media/cards/airSword.png" download><img id="download" class ="ssButton" src = "./../Media/DownloadButton.png"></a>`
+            <a href = "./../Media/cards/airSword.png" download><img id="download" class ="ssButton" src = "./../Media/DownloadButton.png"></a>
+            <img id="playAgain" class ="ssButton" src = "./../Media/buttons/PlayAgainButton.png">`
         }
         //water
         else {
             document.getElementById('content').innerHTML = `<img class = "qrImage" src="./../Media/cards/waterSword.png" alt="Water Sword"></img>`;
 
             document.getElementById('ssButtons').innerHTML = `<img id="back" class ="ssButton" src = "./../Media/buttons/BackButtonIcon.png">
-            <a href = "./../Media/cards/waterSword.png" download><img id="download" class ="ssButton" src = "./../Media/DownloadButton.png"></a>`
+            <a href = "./../Media/cards/waterSword.png" download><img id="download" class ="ssButton" src = "./../Media/DownloadButton.png"></a>
+            <img id="playAgain" class ="ssButton" src = "./../Media/buttons/PlayAgainButton.png">`
         }
         document.getElementById('content').style.marginTop = "0vh";
 
