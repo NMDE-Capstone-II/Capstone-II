@@ -42,7 +42,7 @@ h1 {
     align-items: center;
 }
 
-#QrCode {
+#content {
     text-align: center;
     margin-top: 10vh;
 }
@@ -59,14 +59,15 @@ img.swordImage {
     width: 38vh;
 }
 
-#toSword {
+#continue {
     margin-top: 5vh;
     width: 25vh;
 }
 
-#toQr {
-    margin-top: 0vh;
+#back {
+    margin-top: 1.5vh;
     width: 10vh;
+    height: 12vh;
 }
 
 #download {

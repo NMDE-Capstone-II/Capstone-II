@@ -1,75 +1,141 @@
+let onQr = true;
+let onPass = false;
 let onSword = false;
 
-checkPage();
+console.log(onQr, onPass, onSword);
 
-console.log(onSword);
 
-document.getElementById('toSword').onclick = function () { changeImage() };
-document.getElementById('toQr').onclick = function () { changeImage() };
-
-// document.getElementById('download').onclick = function () { downloadImage() };
-
-function checkPage() {
-    if (onSword == false) {
-        document.getElementById('toSword').style.visibility = 'visible';
-        document.getElementById('toQr').style.visibility = 'hidden';
-        document.getElementById('download').style.visibility = 'hidden';
-    } else {
-        document.getElementById('toSword').style.visibility = 'hidden';
-        document.getElementById('toQr').style.visibility = 'visible';
-        document.getElementById('download').style.visibility = 'visible';
-    }
+if (document.getElementById('continue') != null) {
+    document.getElementById('continue').onclick = function () { continueClicked() };
 }
 
-function changeImage() {
-    if (onSword == false) {
-        //change image to Sword
+function continueClicked() {
+    onQr = false;
+    onPass = true;
+    onSword = false;
+
+    console.log(onQr, onPass, onSword);
+    changeDoc();
+}
+
+function unlockClicked() {
+    onQr = false;
+    onPass = false;
+    onSword = true;
+
+    console.log(onQr, onPass, onSword);
+    changeDoc();
+}
+
+function backClicked() {
+    if (onPass == true) {
+        onQr = true;
+        onPass = false;
+        onSword = false;
+    }
+
+    if (onSword == true) {
+        onQr = false;
+        onPass = true;
+        onSword = false;
+    }
+
+    console.log(onQr, onPass, onSword);
+    changeDoc();
+}
+
+function changeDoc() {
+    if (onSword == true) {
+        //change page to Sword
 
         //fire
         if (document.URL.includes("fireQrCode.html")) {
-            document.getElementById('QrCode').innerHTML = `<img class = "qrImage" src="./../Media/cards/fireSword.png" alt="Fire Sword"></img>`;
+            document.getElementById('content').innerHTML = `<img class = "qrImage" src="./../Media/cards/fireSword.png" alt="Fire Sword"></img>`;
+
+            document.getElementById('ssButtons').innerHTML = `<img id="back" class ="ssButton" src = "./../Media/buttons/BackButtonIcon.png">
+            <a href = "./../Media/cards/fireSword.png" download><img id="download" class ="ssButton" src = "./../Media/DownloadButton.png"></a>`
         }
         //earth
         else if (document.URL.includes("earthQrCode.html")) {
-            document.getElementById('QrCode').innerHTML = `<img class = "qrImage" src="./../Media/cards/earthSword.png" alt="Earth Sword"></img>`;
+            document.getElementById('content').innerHTML = `<img class = "qrImage" src="./../Media/cards/earthSword.png" alt="Earth Sword"></img>`;
+
+            document.getElementById('ssButtons').innerHTML = `<img id="back" class ="ssButton" src = "./../Media/buttons/BackButtonIcon.png">
+            <a href = "./../Media/cards/earthSword.png" download><img id="download" class ="ssButton" src = "./../Media/DownloadButton.png"></a>`
         }
         //air
         else if (document.URL.includes("airQrCode.html")) {
-            document.getElementById('QrCode').innerHTML = `<img class = "qrImage" src="./../Media/cards/airSword.png" alt="Air Sword"></img>`;
+            document.getElementById('content').innerHTML = `<img class = "qrImage" src="./../Media/cards/airSword.png" alt="Air Sword"></img>`;
+
+            document.getElementById('ssButtons').innerHTML = `<img id="back" class ="ssButton" src = "./../Media/buttons/BackButtonIcon.png">
+            <a href = "./../Media/cards/airSword.png" download><img id="download" class ="ssButton" src = "./../Media/DownloadButton.png"></a>`
         }
         //water
         else {
-            document.getElementById('QrCode').innerHTML = `<img class = "qrImage" src="./../Media/cards/waterSword.png" alt="Water Sword"></img>`;
-        }
-        document.getElementById('QrCode').style.marginTop = "0vh";
+            document.getElementById('content').innerHTML = `<img class = "qrImage" src="./../Media/cards/waterSword.png" alt="Water Sword"></img>`;
 
-        onSword = true;
-        checkPage();
-        console.log(onSword);
+            document.getElementById('ssButtons').innerHTML = `<img id="back" class ="ssButton" src = "./../Media/buttons/BackButtonIcon.png">
+            <a href = "./../Media/cards/waterSword.png" download><img id="download" class ="ssButton" src = "./../Media/DownloadButton.png"></a>`
+        }
+        document.getElementById('content').style.marginTop = "0vh";
+
+        document.getElementById('back').onclick = function () { backClicked() };
+
+    } else if (onPass == true) {
+        //change page to Pass
+
+        document.getElementById('content').innerHTML = `<label for="password">Enter Password</label>
+        <input type="text" id = "password"name="password">`;
+
+        document.getElementById('ssButtons').innerHTML = `<img id="back" class ="ssButton" src = "./../Media/buttons/BackButtonIcon.png">
+        <img id="unlock" src = "./../Media/buttons/UnlockButton.png">`
+
+        console.log(document.getElementById('unlock'));
+
+        let passwordCorrect = false;
+        document.getElementById('unlock').style.visibility = 'hidden';
+
+        let password = document.querySelector('#password');
+
+        if (password.value != null) {
+            document.querySelector("#password").onchange = function () { checkPassword(password) }
+        }
+
+        function checkPassword(password) {
+            if (password.value == "magiC") {
+                document.getElementById('unlock').style.visibility = 'visible';
+                passwordCorrect = true;
+                console.log("password true");
+            }
+        }
+
+        document.getElementById('unlock').onclick = function () { unlockClicked() };
+        document.getElementById('back').onclick = function () { backClicked() };
+
     } else {
-        //change image to Qr
+        //change page to Qr
 
         //fire (1)
         if (document.URL.includes("fireQrCode.html")) {
-            document.getElementById('QrCode').innerHTML = `<img class = "swordImage" src="./../Media/QRCodes/fireAnimation.png" alt="Fire Qr Code">`;
+            document.getElementById('content').innerHTML = `<img class = "swordImage" src="./../Media/QRCodes/fireAnimation.png" alt="Fire Qr Code">`;
         }
         //earth (2)
         else if (document.URL.includes("earthQrCode.html")) {
-            document.getElementById('QrCode').innerHTML = `<img class = "swordImage" src="./../Media/QRCodes/earthAnimation.png" alt="Earth Qr Code">`;
+            document.getElementById('content').innerHTML = `<img class = "swordImage" src="./../Media/QRCodes/earthAnimation.png" alt="Earth Qr Code">`;
         }
         //air (3)
         else if (document.URL.includes("airQrCode.html")) {
-            document.getElementById('QrCode').innerHTML = `<img class = "swordImage" src="./../Media/QRCodes/airAnimation.png" alt="Air Qr Code">`;
+            document.getElementById('content').innerHTML = `<img class = "swordImage" src="./../Media/QRCodes/airAnimation.png" alt="Air Qr Code">`;
         }
         //water (4)
         else {
-            document.getElementById('QrCode').innerHTML = `<img class = "swordImage" src="./../Media/QRCodes/waterAnimation.png" alt="Water Qr Code">`;
+            document.getElementById('content').innerHTML = `<img class = "swordImage" src="./../Media/QRCodes/waterAnimation.png" alt="Water Qr Code">`;
         }
 
-        document.getElementById('QrCode').style.marginTop = "10vh";
+        document.getElementById('ssButtons').innerHTML = `<img id="continue" src = "./../Media/buttons/ContinueButton.png">`
 
-        onSword = false;
-        checkPage();
-        console.log(onSword);
+        document.getElementById('content').style.marginTop = "10vh";
+
+        document.getElementById('continue').onclick = function () { continueClicked() };
+
     }
 }
