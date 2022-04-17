@@ -10,7 +10,7 @@ function onScanSuccess(decodedText, decodedResult) {
         // Handle on success condition with the decoded message.
         console.log(`Scan result ${decodedText}`, decodedResult, h1tab);
         h1tab.style.visibility = "visible"
-        h1tab.innerHTML = `<iframe width="560" height="315" src="https://www.youtube.com/embed/zOI0tW3wZYI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        h1tab.innerHTML = `<iframe width="560" height="315" src="${decodedText}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         `;
     }
 }
