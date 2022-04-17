@@ -57,3 +57,43 @@ function titleButtonAnimation() {
 
 
 }
+
+
+let instruction1 = true;
+
+if (document.getElementById('onboardForward') != null) {
+  document.getElementById('onboardForward').onclick = function () { onboardForwardClicked() };
+}
+
+function onboardForwardClicked() {
+  instruction1 = false;
+  changeDoc();
+}
+
+function onboardBackClicked() {
+  instruction1 = true;
+  changeDoc();
+}
+
+function changeDoc() {
+  if (instruction1 == true) {
+    document.getElementById('content').innerHTML =
+      `<img id="onBoard1" src="./../Media/OnBoard1Mock.png">
+        <div id="textInContext">
+          <p>Look for shapes that contain gems</p>
+        </div>
+      <img id="onboardForward" src="./../Media/buttons/ForwardButtonIcon.png">`
+
+      document.getElementById('onboardForward').onclick = function () { onboardForwardClicked() };
+      
+  } else {
+    document.getElementById('content').innerHTML =
+      `<img id="onBoard1" src="./../Media/OnBoard1Mock.png">
+        <div id="textInContext">
+          <p>Return power to the crystal once you scan all four gems</p>
+        </div>
+      <img id="onboardBack" src="./../Media/buttons/BackButtonIcon.png">`
+
+      document.getElementById('onboardBack').onclick = function () { onboardBackClicked() };
+  }
+}

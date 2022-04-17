@@ -80,7 +80,8 @@ function changeDoc() {
             <a href = "./../Media/cards/waterSword.png" download><img id="download" class ="ssButton" src = "./../Media/DownloadButton.png"></a>
             <img id="playAgain" class ="ssButton" src = "./../Media/buttons/PlayAgainButton.png">`
         }
-        document.getElementById('content').style.marginTop = "0vh";
+        document.getElementById('content').style.marginTop = "5vh";
+        document.getElementById('content').style.marginBottom = "5vh";
 
         document.getElementById('back').onclick = function () { backClicked() };
 
@@ -112,6 +113,9 @@ function changeDoc() {
             }
         }
 
+        document.getElementById('content').style.marginTop = "25vh";
+        document.getElementById('content').style.marginBottom = "35vh";
+
         document.getElementById('unlock').onclick = function () { unlockClicked() };
         document.getElementById('back').onclick = function () { backClicked() };
 
@@ -137,7 +141,8 @@ function changeDoc() {
 
         document.getElementById('ssButtons').innerHTML = `<img id="continue" src = "./../Media/buttons/ContinueButton.png">`
 
-        document.getElementById('content').style.marginTop = "10vh";
+        document.getElementById('content').style.marginTop = "15vh";
+        document.getElementById('content').style.marginBottom = "15vh";
 
         document.getElementById('continue').onclick = function () { continueClicked() };
 

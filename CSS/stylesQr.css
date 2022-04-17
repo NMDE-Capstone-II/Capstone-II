@@ -30,6 +30,13 @@ h1 {
     font-size: 2vh;
 }
 
+label {
+    font-family: 'Exo2Normal';
+    font-size: 3vh;
+
+    color: #E9FFFC;
+}
+
 .top {
     margin-top: 5vh;
     text-align: center;
@@ -44,7 +51,8 @@ h1 {
 
 #content {
     text-align: center;
-    margin-top: 10vh;
+    margin-top: 15vh;
+    margin-bottom: 15vh;
 }
 
 img.title {
@@ -53,7 +61,6 @@ img.title {
 
 img.qrImage {
     width: 30vh;
-    margin: 5vh;
 }
 
 img.swordImage {

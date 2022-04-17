@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./../CSS/stylesheet.css">
-    <script type="text/javascript" src="./../JS/webpage.js"></script>
+    <link rel="stylesheet" href="./../CSS/stylesheet2.0.css">
     <!-- <script type="text/javascript" src="/JS/transitions.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
@@ -22,35 +21,22 @@
     </div>
     <!-- put here content that will not change
   between your pages, like <header> or <nav> -->
->
-    <main data-barba="container" data-barba-namespace="instructions">    
-        <a href='./../HTML/index.html'><img src="./../Media/Back-icon.svg"></a>
-        <div class="header">
-            <h1 class="animate-this">How To Play</h1>
-        </div>
+    <main data-barba="container" data-barba-namespace="instructions">
 
-        <div class="container">
-           
-
-            <div class="center">
-                <div class="Instructional">
-                    <div id="alignment">
-                       
-                        <p>Look for shapes that contain gems</p>
-
-                        <p>Return power to the crystal once you scan all four gems</p>
-
-                        
-                        
-                    </div>
-                 
-    
+        <div id="container">
+            <div class="top">
+                <h1 class="animate-this">How To Play</h1>
+            </div>
+            <div id="content">
+                <img id="onBoard1" src="./../Media/OnBoard1Mock.png">
+                <div id="textInContext">
+                    <p>Look for shapes that contain gems</p>
                 </div>
-
+                <img id="onboardForward" src="./../Media/buttons/ForwardButtonIcon.png">
+            </div>
+            <div id="ssButtons">
+                <a href='./../HTML/index.html'><img id="back" src="./../Media/buttons/BackButtonIcon.png"></a>
                 <a href='./../HTML/scanner.html'><img id="startButton" src="./../Media/StartButton.svg"></a><br>
-                
-            
-                
             </div>
         </div>
 
@@ -59,5 +45,7 @@
     <!-- put here content that will not change
   between your pages, like <footer> -->
 </body>
+
+<script type="text/javascript" src="./../JS/webpage.js"></script>
 
 </html>
