@@ -1,0 +1,22 @@
+.ar-screen nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 42px;
+  width: 100%;
+}
+
+.ar-screen nav .nav__back img, .ar-screen nav .nav__info img {
+  width: 26px;
+}
+
+.ar-screen nav .nav__progress {
+  margin-top: 30px;
+}
+
+.ar-screen nav .nav__progress img {
+  width: 70px;
+}
+/*# sourceMappingURL=ar-screen.css.map */
