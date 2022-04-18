@@ -1,20 +1,41 @@
 .ar-screen {
 
   nav {
-    // z-index: 2 !important;
+    z-index: 2 !important;
     display: flex;
     justify-content: space-around;
     margin-top: 42px;
-    width: 100%;
+    width: 100% !important;
+    button {
+      background-color: transparent;
+      border: none;
+      height: fit-content;
+    }
     .nav {
       &__back, &__info {
         img {width:26px;}
       }
+      &__info img{ 
+        position: relative;;
+        top: 0;
+      }
       &__progress {
         margin-top: 30px;
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        margin: 30px 1rem 0 1rem;
         img {width: 70px;}
       }
     }
+  }
+  .ar-xp {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top:0;
+    left: 0;
+    z-index: -2;
   }
   
 }

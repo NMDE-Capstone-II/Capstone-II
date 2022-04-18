@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,83 +9,56 @@
     <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
     <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
     <link rel="stylesheet" href="ar-screen.css">
-    <script>
-        AFRAME.registerComponent('registerevents', {
-            init: function () {
-                var marker = this.el;
-                isMarkerVisible = false;
-                // Make the element emit events when found and when lost.
-                marker.setAttribute('emitevents', 'true');
-    
-                marker.addEventListener('markerFound', function(e) {
-                    var markerId = marker.id;
-                    console.log('markerFound',e,  markerId);
-                    isMarkerVisible = true;
-                    window.addEventListener('click', handleGemFound);
-                    // TODO: Add your own code here to react to the marker being found.
-                });
-                marker.addEventListener('markerLost', function(e) {
-                    var markerId = marker.id;
-                    console.log('markerLost', e, markerId);
-                    isMarkerVisible = false;
-                    window.removeEventListener('click', handleGemFound);
-                    // TODO: Add your own code here to react to the marker being lost.
-                });
-                function handleGemFound(){
-                    console.log('COLLECTED');
-                }
-                function handleGemLost(){
-                    console.log("GEM LOST");
-                }
-                function handleRotation(event) {
-                    if (isMarkerVisible) {
-                    el.object3D.rotation.y +=
-                        event.detail.positionChange.x * rotationFactor;
+    <script src="./ar-screen.js"></script>
 
-                    el.object3D.rotation.x +=
-                        event.detail.positionChange.y * rotationFactor;
-                    }
-                } 
-            }
-        });
-    </script>
 </head>
 <body class="ar-screen">
     <nav>
-        <div class="nav__back"><img src="./assets/nav-icons/back-icon.png" alt="back"></div>
+        <a href="#previous-page" class="nav__back"><img src="./assets/nav-icons/back-icon.png" alt="back"></a>
         <div class="nav__progress">
-            <img src="./assets/gems/triangle-hollow.png" alt="">
-            <img src="./assets/gems/circle-hollow.png" alt="">
-            <img src="./assets/gems/hex-hollow.png" alt="">
-            <img src="./assets/gems/square-hollow.png" alt="">
+            <div id="tri">
+                <img src="./assets/gems/triangle-hollow.png" alt="">
+            </div>
+            <div id="cir">
+                <img src="./assets/gems/circle-hollow.png" alt="">
+            </div>
+            <div id="hex">
+                <img src="./assets/gems/hex-hollow.png" alt="">
+            </div>
+            <div id="sq">
+                <img src="./assets/gems/square-hollow.png" alt="">
+            </div>
         </div>
-        <div class="nav__info"><img src="./assets/nav-icons/info-icon.png" alt="info"></div>
+        <button class="nav__info"><img src="./assets/nav-icons/info-icon.png" alt="info"></button>
     </nav>
-    <a-scene class="camera-view"disabled vr-mode-ui="enabled: false;"
-    renderer="logarithmicDepthBuffer: true;"
-
-    gesture-detector antialias="true" outline
-    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
-        <a-assets>
-            <a-asset-item id="mymodel1" src="./../gems/circle.gltf"></a-asset-item>
-            <a-asset-item id="mymodel2" src="./../gems/triangle.gltf"></a-asset-item>
-            <a-asset-item id="mymodel3" src="./../gems/hexagon.gltf"></a-asset-item>
-            <a-asset-item id="mymodel4" src="./../gems/square.gltf"></a-asset-item>
-        </a-assets>
-        <a-marker patternUrl="./../markers/pattern-GEM-Circle2.patt" registerevents emitevents='true'
-        raycaster="objects: .clickable" cursor="fuse: false; rayOrigin: mouse;">
-            <a-entity position="0 0 0" gltf-model="#mymodel1" scale="0.01 0.01 0.01"></a-entity>
-        </a-marker>
-
-        <!-- handle barcode marker -->
-        <a-marker id="kanji" preset="kanji" registerevents emitevents='true' 
-        raycaster="objects: .clickable" cursor="fuse: false; rayOrigin: mouse;">
-            <a-entity position="0 0 0" gltf-model="#mymodel2" scale="0.01 0.01 0.01"></a-entity>
-        </a-marker>
-
-        <!-- add a simple camera -->
-        <a-entity camera></a-entity>
-    </a-scene> 
+    <div>
+        <a-scene class="camera-view"disabled vr-mode-ui="enabled: false;"
+        renderer="logarithmicDepthBuffer: true;"
+    
+        gesture-detector antialias="true" outline
+        arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+            <a-assets>
+                <a-asset-item id="mymodel1" src="./../gems/circle.gltf"></a-asset-item>
+                <a-asset-item id="mymodel2" src="./../gems/triangle.gltf"></a-asset-item>
+                <a-asset-item id="mymodel3" src="./../gems/hexagon.gltf"></a-asset-item>
+                <a-asset-item id="mymodel4" src="./../gems/square.gltf"></a-asset-item>
+            </a-assets>
+            <a-marker patternUrl="./../markers/pattern-GEM-Circle2.patt" id="cir pattern" registerevents emitevents='true'
+            raycaster="objects: .clickable" cursor="fuse: false; rayOrigin: mouse;">
+                <a-entity position="0 0 0" gltf-model="#mymodel1" scale="0.01 0.01 0.01"></a-entity>
+            </a-marker>
+    
+            <!-- handle barcode marker -->
+            <a-marker id="tri" preset="kanji" registerevents emitevents='true' 
+            raycaster="objects: .clickable" cursor="fuse: false; rayOrigin: mouse;">
+                <a-entity position="0 0 0" gltf-model="#mymodel2" scale="0.01 0.01 0.01"></a-entity>
+            </a-marker>
+    
+            <!-- add a simple camera -->
+            <a-entity camera></a-entity>
+        </a-scene> 
+    </div>
+    <!-- <iframe class="ar-xp" src="./ar-xp.html" frameborder="0"></iframe> -->
 </body>
 
 </html>

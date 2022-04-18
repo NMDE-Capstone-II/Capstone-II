@@ -10,46 +10,7 @@
     <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
     <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
     <link rel="stylesheet" href="ar-screen.css">
-    <script>
-        AFRAME.registerComponent('registerevents', {
-            init: function () {
-                var marker = this.el;
-                isMarkerVisible = false;
-                // Make the element emit events when found and when lost.
-                marker.setAttribute('emitevents', 'true');
-    
-                marker.addEventListener('markerFound', function(e) {
-                    var markerId = marker.id;
-                    console.log('markerFound',e,  markerId);
-                    isMarkerVisible = true;
-                    window.addEventListener('click', handleGemFound);
-                    // TODO: Add your own code here to react to the marker being found.
-                });
-                marker.addEventListener('markerLost', function(e) {
-                    var markerId = marker.id;
-                    console.log('markerLost', e, markerId);
-                    isMarkerVisible = false;
-                    window.removeEventListener('click', handleGemFound);
-                    // TODO: Add your own code here to react to the marker being lost.
-                });
-                function handleGemFound(){
-                    console.log('COLLECTED');
-                }
-                function handleGemLost(){
-                    console.log("GEM LOST");
-                }
-                function handleRotation(event) {
-                    if (isMarkerVisible) {
-                    el.object3D.rotation.y +=
-                        event.detail.positionChange.x * rotationFactor;
-
-                    el.object3D.rotation.x +=
-                        event.detail.positionChange.y * rotationFactor;
-                    }
-                } 
-            }
-        });
-    </script>
+    <script src="./ar-screen.js"></script>
 </head>
 <body class="ar-screen">
     
@@ -64,13 +25,13 @@
             <a-asset-item id="mymodel3" src="./../gems/hexagon.gltf"></a-asset-item>
             <a-asset-item id="mymodel4" src="./../gems/square.gltf"></a-asset-item>
         </a-assets>
-        <a-marker patternUrl="./../markers/pattern-GEM-Circle2.patt" registerevents emitevents='true'
+        <a-marker patternUrl="./../markers/pattern-GEM-Circle2.patt" id="cir pattern" registerevents emitevents='true'
         raycaster="objects: .clickable" cursor="fuse: false; rayOrigin: mouse;">
             <a-entity position="0 0 0" gltf-model="#mymodel1" scale="0.01 0.01 0.01"></a-entity>
         </a-marker>
 
         <!-- handle barcode marker -->
-        <a-marker id="kanji" preset="kanji" registerevents emitevents='true' 
+        <a-marker id="tri" preset="kanji" registerevents emitevents='true' 
         raycaster="objects: .clickable" cursor="fuse: false; rayOrigin: mouse;">
             <a-entity position="0 0 0" gltf-model="#mymodel2" scale="0.01 0.01 0.01"></a-entity>
         </a-marker>
