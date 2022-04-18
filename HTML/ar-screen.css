@@ -5,8 +5,8 @@
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin-top: 42px;
-  width: 100% !important;
+  margin: 42px auto 0 auto;
+  width: 100vw !important;
 }
 
 .ar-screen nav button {
@@ -42,11 +42,11 @@
 }
 
 .ar-screen .ar-xp {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
   z-index: -2;
+}
+
+.ar-screen #arjs-video {
+  -o-object-fit: fit !important;
+     object-fit: fit !important;
 }
 /*# sourceMappingURL=ar-screen.css.map */
