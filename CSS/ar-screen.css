@@ -1,0 +1,52 @@
+.ar-screen nav {
+  z-index: 2 !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 42px auto 0 auto;
+  width: 100vw !important;
+}
+
+.ar-screen nav button {
+  background-color: transparent;
+  border: none;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.ar-screen nav .nav__back img, .ar-screen nav .nav__info img {
+  width: 26px;
+}
+
+.ar-screen nav .nav__info img {
+  position: relative;
+  top: 0;
+}
+
+.ar-screen nav .nav__progress {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 30px 1rem 0 1rem;
+}
+
+.ar-screen nav .nav__progress img {
+  width: 70px;
+}
+
+.ar-screen .ar-xp {
+  z-index: -2;
+}
+
+.ar-screen #arjs-video {
+  -o-object-fit: fit !important;
+     object-fit: fit !important;
+}
+/*# sourceMappingURL=ar-screen.css.map */

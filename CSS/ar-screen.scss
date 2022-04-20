@@ -1,0 +1,39 @@
+.ar-screen {
+
+  nav {
+    z-index: 2 !important;
+    display: flex;
+    justify-content: space-around;
+    margin: 42px auto 0 auto;
+    width: 100vw !important;
+    button {
+      background-color: transparent;
+      border: none;
+      height: fit-content;
+    }
+    .nav {
+      &__back, &__info {
+        img {width:26px;}
+      }
+      &__info img{ 
+        position: relative;;
+        top: 0;
+      }
+      &__progress {
+        margin-top: 30px;
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        margin: 30px 1rem 0 1rem;
+        img {width: 70px;}
+      }
+    }
+  }
+  .ar-xp {
+    z-index: -2;
+  }
+  #arjs-video {
+    object-fit: fit !important; // video is not scaling along with canvas causing displacement of gems
+  }
+  
+}

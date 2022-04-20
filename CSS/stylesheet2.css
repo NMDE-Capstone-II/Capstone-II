@@ -17,10 +17,17 @@ body {
     touch-action: none;
 }
 
+
 @font-face {
-    font-family: exo;
+    font-family: Exo2Normal;
     src: url(./Fonts/Exo2-Regular.ttf);
-}
+  }
+  
+  
+@font-face {
+    font-family: BibloINC;
+    src: url(./Fonts/BilboINC.ttf);
+  }
 
 h1 {
     font-family: 'BibloINC';
