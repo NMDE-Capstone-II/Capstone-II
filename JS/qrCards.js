@@ -111,7 +111,7 @@ function changeDoc() {
         }
 
         function checkPassword(password) {
-            if (password.value == "magiC") {
+            if (password.value == "MagiC") {
                 document.getElementById('unlock').style.visibility = 'visible';
                 passwordCorrect = true;
                 console.log("password true");
