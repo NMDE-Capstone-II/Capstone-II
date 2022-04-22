@@ -78,7 +78,7 @@ function onboardBackClicked() {
 function changeDoc() {
   if (instruction1 == true) {
     document.getElementById('content').innerHTML =
-      `<img id="onBoard1" src="./../Media/OnBoard1Mock.png">
+      `<img id="onBoard1" src="./../Media/OnBoard1.png">
         <div id="textInContext">
           <p>Look for shapes that contain gems</p>
         </div>
@@ -88,7 +88,7 @@ function changeDoc() {
       
   } else {
     document.getElementById('content').innerHTML =
-      `<img id="onBoard1" src="./../Media/OnBoard1Mock.png">
+      `<img id="onBoard1" src="./../Media/OnBoard2.png">
         <div id="textInContext">
           <p>Return power to the crystal once you scan all four gems</p>
         </div>
@@ -96,4 +96,8 @@ function changeDoc() {
 
       document.getElementById('onboardBack').onclick = function () { onboardBackClicked() };
   }
+}
+
+function onload() {
+  window.location.reload()
 }
