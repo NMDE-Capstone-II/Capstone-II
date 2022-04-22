@@ -16,11 +16,12 @@ function setup() {
 
 function findGemInstruction(){ // can be used to remind user how to use gem
   userPrompt.innerHTML = `<img class="prompt-gif" src="./assets/Phone.gif" alt="">`
+  // side effect that affects other code :(
+  // setTimeout(() => {
+  //   userPrompt.classList.add("hide-elem")
+  // }, "4000")
   setTimeout(() => {
-    userPrompt.classList.add("hide-elem")
-  }, "4000")
-  setTimeout(() => {
-    userPrompt.innerHTML = ""
+    // userPrompt.innerHTML = ""
     userPrompt.classList.remove('hide-elem')
   }, "8000")
 }
@@ -75,10 +76,10 @@ AFRAME.registerComponent('registerevents', {
       });
       function handleGemFound(){
           gemStateChanger(currentGem);
-          userPrompt.innerHTML = `<img class="prompt-gif" src="./assets/congrats-gems.png" alt="">`
           console.log(userPrompt)
-          // if (collectedGems.size >= 0) {
-          // }
+          if (collectedGems.size >= 4) {
+            userPrompt.innerHTML = `<img class="prompt-gif" src="./assets/congrats-gems.png" alt="">`
+          }
       }
       function handleGemLost(){
           console.log("GEM LOST");
