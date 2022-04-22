@@ -44,6 +44,10 @@ function backClicked() {
     changeDoc();
 }
 
+function playAgainClicked() {
+    window.location.href = "./../HTML/index.html";
+}
+
 function changeDoc() {
     if (onSword == true) {
         //change page to Sword
@@ -84,6 +88,7 @@ function changeDoc() {
         document.getElementById('content').style.marginBottom = "5vh";
 
         document.getElementById('back').onclick = function () { backClicked() };
+        document.getElementById('playAgain').onclick = function () { playAgainClicked() };
 
     } else if (onPass == true) {
         //change page to Pass
