@@ -49,7 +49,7 @@ AFRAME.registerComponent('registerevents', {
           console.log('markerFound',e,  markerId);
           isMarkerVisible = true;
           currentGem = markerId;
-          window.addEventListener('click', handleGemFound);
+          // window.addEventListener('click', handleGemFound);
           
       });
       marker.addEventListener('markerLost', function(e) {
@@ -57,7 +57,7 @@ AFRAME.registerComponent('registerevents', {
           console.log('markerLost', e, markerId);
           currentGem =  "";
           isMarkerVisible = false;
-          window.removeEventListener('click', handleGemFound);
+          // window.removeEventListener('click', handleGemFound);
   
       });
       function handleGemFound(){

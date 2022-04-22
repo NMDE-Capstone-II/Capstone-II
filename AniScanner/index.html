@@ -4,12 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="./../JS/webpage.js"></script>
-    <link rel="stylesheet" href="./../CSS/stylesheet.css">
-    <title>Scanner</title>
+    <title>Document</title>
+    <style>
+        body {
+            background-color: purple;
+            
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            
+        }
+        iframe.fullScreen {
+            width: 98vw;
+            height: 98vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+
 </head>
 <body>
-    <h1 id="scannerTitle">Awaiting Sigil...</h1>
-    <a src="./aniScanner.html"><img src="./../Media/buttons/ScanButton.png"></a>
+    <div id="qr-reader"></div>
 </body>
+<script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="./aniJS.js"></script>
 </html>
