@@ -1,3 +1,28 @@
+.ar-screen .screenPrompt {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  left: 0;
+}
+
+.ar-screen .hide-elem {
+  opacity: 0;
+  -webkit-transition: opacity 2s cubic-bezier(0.1, 0.7, 1, 0.1);
+  transition: opacity 2s cubic-bezier(0.1, 0.7, 1, 0.1);
+}
+
+.ar-screen .prompt-gif {
+  max-width: 75vw;
+  text-align: center;
+  width: 500px;
+}
+
 .ar-screen nav {
   z-index: 2 !important;
   display: -webkit-box;

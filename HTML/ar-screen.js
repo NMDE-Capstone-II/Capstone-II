@@ -1,20 +1,35 @@
 
 
 window.addEventListener('load', setup);
-let tri, hex, sq, cir;
+let tri, hex, sq, cir, userPrompt;
 const collectedGems = new Set();
 function setup() {
+  userPrompt = document.querySelector(".screenPrompt");
   tri = document.querySelector("#tri");
   sq = document.querySelector("#sq");
   cir = document.querySelector("#cir");
   hex = document.querySelector("#hex");
+  findGemInstruction();
+
 }
 
+
+function findGemInstruction(){ // can be used to remind user how to use gem
+  userPrompt.innerHTML = `<img class="prompt-gif" src="./assets/Phone.gif" alt="">`
+  setTimeout(() => {
+    userPrompt.classList.add("hide-elem")
+  }, "4000")
+  setTimeout(() => {
+    userPrompt.innerHTML = ""
+    userPrompt.classList.remove('hide-elem')
+  }, "8000")
+}
 function gemStateChanger(currentGem) {
   if (collectedGems.has(currentGem)){ 
     console.log("already collected");
   }
   else {
+    collectedGems.add(currentGem)
     switch (currentGem){
       case 'tri':
         tri.innerHTML = `<img src="./assets/gems/triangle-closed.png" alt="">`;
@@ -29,8 +44,6 @@ function gemStateChanger(currentGem) {
         hex.innerHTML = `<img src="./assets/gems/hex-closed.png" alt="">`;
         break;
     }
-
-
   }
 }
 /**
@@ -49,7 +62,7 @@ AFRAME.registerComponent('registerevents', {
           console.log('markerFound',e,  markerId);
           isMarkerVisible = true;
           currentGem = markerId;
-          // window.addEventListener('click', handleGemFound);
+          window.addEventListener('click', handleGemFound);
           
       });
       marker.addEventListener('markerLost', function(e) {
@@ -57,12 +70,15 @@ AFRAME.registerComponent('registerevents', {
           console.log('markerLost', e, markerId);
           currentGem =  "";
           isMarkerVisible = false;
-          // window.removeEventListener('click', handleGemFound);
+          window.removeEventListener('click', handleGemFound);
   
       });
       function handleGemFound(){
-          console.log('COLLECTED', currentGem);
           gemStateChanger(currentGem);
+          userPrompt.innerHTML = `<img class="prompt-gif" src="./assets/congrats-gems.png" alt="">`
+          console.log(userPrompt)
+          // if (collectedGems.size >= 0) {
+          // }
       }
       function handleGemLost(){
           console.log("GEM LOST");

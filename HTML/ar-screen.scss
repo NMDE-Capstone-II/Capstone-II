@@ -1,5 +1,21 @@
 .ar-screen {
-
+  .screenPrompt {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    left: 0;
+  }
+  .hide-elem { //visually hides element use js to remove elem
+    opacity: 0;
+    transition: opacity 2s cubic-bezier(0.1, 0.7, 1.0, 0.1);
+  }
+  .prompt-gif {
+    max-width: 75vw;
+    text-align: center;
+    width: 500px;
+  }
   nav {
     z-index: 2 !important;
     display: flex;
