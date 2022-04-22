@@ -5,14 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+    <style>
+        body {
+            background-color: black;
+            
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            
+        }
+        iframe.fullScreen {
+            width: 98vw;
+            height: 98vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
 
 </head>
 <body>
-    <div id="qr-reader" style="width:500px"></div>
-<div id="qr-reader-results"></div>
-<div id="letsgo" style="visibility: hidden;">
-</div>
+    <div id="qr-reader"></div>
 </body>
 <script src="https://unpkg.com/html5-qrcode"></script>
     <script src="./qr-code-scanner.js"></script>
