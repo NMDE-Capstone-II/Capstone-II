@@ -72,20 +72,20 @@ img.swordImage {
 
 #back {
     margin-top: 1.5vh;
-    width: 10vh;
-    height: 12vh;
+    width: 8vh;
+    height: 10vh;
 }
 
 #download {
     margin-top: 0vh;
     padding-bottom: 3vh;
-    width: 22vh;
+    width: 16vh;
 }
 
 #playAgain {
     margin-top: 0vh;
     padding-bottom: 3vh;
-    width: 22vh;
+    width: 16vh;
 }
 
 .ssButtons {
