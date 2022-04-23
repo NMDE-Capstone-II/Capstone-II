@@ -42,6 +42,10 @@
   height: fit-content;
 }
 
+.ar-screen nav .nav__back, .ar-screen nav .nav__info {
+  z-index: 9999 !important;
+}
+
 .ar-screen nav .nav__back img, .ar-screen nav .nav__info img {
   width: 26px;
 }

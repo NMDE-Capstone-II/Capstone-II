@@ -30,6 +30,7 @@
     .nav {
       &__back, &__info {
         img {width:26px;}
+        z-index: 9999 !important;
       }
       &__info img{ 
         position: relative;;
