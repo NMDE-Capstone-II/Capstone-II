@@ -1,7 +1,7 @@
 
 
 window.addEventListener('load', setup);
-let tri, hex, sq, cir, userPrompt;
+let tri, hex, sq, cir, userPrompt, canvas, isTouch = true;
 const collectedGems = new Set();
 function setup() {
   userPrompt = document.querySelector(".screenPrompt");
@@ -9,8 +9,9 @@ function setup() {
   sq = document.querySelector("#sq");
   cir = document.querySelector("#cir");
   hex = document.querySelector("#hex");
-  findGemInstruction();
-  
+  canvas = document.querySelector(".a-canvas");
+  isTouch = isTouchDevice();
+  console.log(canvas, isTouch)
 
 }
 
@@ -48,6 +49,13 @@ function gemStateChanger(currentGem) {
     }
   }
 }
+
+function isTouchDevice() {
+  return (('ontouchstart' in window) ||
+     (navigator.maxTouchPoints > 0) ||
+     (navigator.msMaxTouchPoints > 0));
+}
+
 /**
  * The code below adds interactivity to the gem collection
  */
@@ -64,7 +72,8 @@ AFRAME.registerComponent('registerevents', {
           console.log('markerFound',e,  markerId);
           isMarkerVisible = true;
           currentGem = markerId;
-          window.addEventListener('click', handleGemFound);
+          isTouch ? canvas.addEventListener('touchstart', handleGemFound) : canvas.addEventListener('click', handleGemFound);
+          
           
       });
       marker.addEventListener('markerLost', function(e) {
@@ -72,7 +81,7 @@ AFRAME.registerComponent('registerevents', {
           console.log('markerLost', e, markerId);
           currentGem =  "";
           isMarkerVisible = false;
-          window.removeEventListener('click', handleGemFound);
+          isTouch ? canvas.removeEventListener('touchstart', handleGemFound) : canvas.removeEventListener('click', handleGemFound);
   
       });
       function handleGemFound(){
