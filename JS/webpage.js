@@ -90,7 +90,7 @@ function changeDoc() {
     document.getElementById('content').innerHTML =
       `<img id="onBoard1" src="./../Media/OnBoard2.png">
         <div id="textInContext">
-          <p>Return power to the crystal once you scan all four gems</p>
+          <p>Return to the crystal once you scan all four gems</p>
         </div>
       <img id="onboardBack" src="./../Media/buttons/BackButtonIcon.png">`
 
