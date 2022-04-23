@@ -129,19 +129,19 @@ function changeDoc() {
 
         //fire (1)
         if (document.URL.includes("fireQrCode.html")) {
-            document.getElementById('content').innerHTML = `<img class = "swordImage" src="./../Media/QRCodes/fireAnimation.png" alt="Fire Qr Code">`;
+            document.getElementById('content').innerHTML = `<img class = "swordImage" src="./../Media/QRCodes/fire-qr.png" alt="Fire Qr Code">`;
         }
         //earth (2)
         else if (document.URL.includes("earthQrCode.html")) {
-            document.getElementById('content').innerHTML = `<img class = "swordImage" src="./../Media/QRCodes/earthAnimation.png" alt="Earth Qr Code">`;
+            document.getElementById('content').innerHTML = `<img class = "swordImage" src="./../Media/QRCodes/earth-qr.png" alt="Earth Qr Code">`;
         }
         //air (3)
         else if (document.URL.includes("airQrCode.html")) {
-            document.getElementById('content').innerHTML = `<img class = "swordImage" src="./../Media/QRCodes/airAnimation.png" alt="Air Qr Code">`;
+            document.getElementById('content').innerHTML = `<img class = "swordImage" src="./../Media/QRCodes/air-qr.png" alt="Air Qr Code">`;
         }
         //water (4)
         else {
-            document.getElementById('content').innerHTML = `<img class = "swordImage" src="./../Media/QRCodes/waterAnimation.png" alt="Water Qr Code">`;
+            document.getElementById('content').innerHTML = `<img class = "swordImage" src="./../Media/QRCodes/water-qr.png" alt="Water Qr Code">`;
         }
 
         document.getElementById('ssButtons').innerHTML = `<img id="continue" src = "./../Media/buttons/ContinueButton.png">`

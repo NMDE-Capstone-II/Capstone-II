@@ -31,34 +31,38 @@
         </div>
         <button class="nav__info"><img src="./assets/nav-icons/info-icon.png" alt="info"></button>
     </nav>
+    <div class="screenPrompt"></div>
     <div class="ar-xp">
         <a-scene class="camera-view"disabled vr-mode-ui="enabled: false;"
         renderer="logarithmicDepthBuffer: true;"
     
         gesture-detector antialias="true" outline
         arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+           <!-- Default lighting injected by A-Frame. -->
+          
+           <a-entity light="type: ambient; color: #BBB"></a-entity>
+           <a-entity light="type: directional; color: #FFFFFF; intensity: 4" position="0 0 3"></a-entity>
             <a-assets>
-                <a-asset-item id="mymodel1" src="./../gems/circle.gltf"></a-asset-item>
-                <a-asset-item id="mymodel2" src="./../gems/triangle.gltf"></a-asset-item>
-                <a-asset-item id="mymodel3" src="./../gems/hexagon.gltf"></a-asset-item>
-                <a-asset-item id="mymodel4" src="./../gems/square.gltf"></a-asset-item>
+                <a-asset-item id="mymodel1" src="./../gems/CircleGem.gltf"></a-asset-item>
+                <a-asset-item id="mymodel2" src="./../gems/TriGEM.gltf"></a-asset-item>
+                <a-asset-item id="mymodel3" src="./../gems/HexGEM.gltf"></a-asset-item>
+                <a-asset-item id="mymodel4" src="./../gems/SquareGEM.gltf"></a-asset-item>
             </a-assets>
-            <a-marker type="pattern" url="./../Media/QRCodes/circle2.patt"  id="cir" registerevents emitevents='true'
+            <a-marker type="pattern" url="./../Media/QRCodes/circle.patt"  id="cir" registerevents emitevents='true'
             raycaster="objects: .clickable" cursor="fuse: false; rayOrigin: mouse;">
-                <a-entity position="0 0 0" gltf-model="#mymodel1" scale="0.01 0.01 0.01"></a-entity>
+                <a-entity rotation="90 0 0" position="0 0 0" gltf-model="#mymodel1" scale="0.02 0.02 0.02"></a-entity>
             </a-marker>
-    
-            <a-marker  type="pattern" url="./../Media/QRCodes/triangle4.patt" id="tri" preset="kanji" registerevents emitevents='true' 
+            <a-marker  type="pattern" url="./../Media/QRCodes/triangle.patt" id="tri" registerevents emitevents='true' 
             raycaster="objects: .clickable" cursor="fuse: false; rayOrigin: mouse;">
-                <a-entity position="0 0 0" gltf-model="#mymodel2" scale="0.01 0.01 0.01"></a-entity>
+                <a-entity rotation="90 0 0" position="0 0 0" gltf-model="#mymodel2" scale="0.02 0.02 0.02"></a-entity>
             </a-marker>
-            <a-marker id="hex" type="pattern" url="./../Media/QRCodes/hexagon2.patt" registerevents emitevents='true' 
+            <a-marker id="hex" type="pattern" url="./../Media/QRCodes/hexagon.patt" registerevents emitevents='true' 
             raycaster="objects: .clickable" cursor="fuse: false; rayOrigin: mouse;">
-                <a-entity position="0 0 0" gltf-model="#mymodel3" scale="0.01 0.01 0.01"></a-entity>
+                <a-entity rotation="90 0 0" position="0 0 0" gltf-model="#mymodel3" scale="0.02 0.02 0.02"></a-entity>
             </a-marker>
-            <a-marker id="sq" type="pattern" url="./../Media/QRCodes/square2.patt" registerevents emitevents='true' 
+            <a-marker id="sq" type="pattern" url="./../Media/QRCodes/square.patt" registerevents emitevents='true' 
             raycaster="objects: .clickable" cursor="fuse: false; rayOrigin: mouse;">
-                <a-entity position="0 0 0" gltf-model="#mymodel4" scale="0.01 0.01 0.01"></a-entity>
+                <a-entity rotation="90 0 0" position="0 0 0" gltf-model="#mymodel4" scale="0.02 0.02 0.02"></a-entity>
             </a-marker>
     
             <!-- add a simple camera -->
