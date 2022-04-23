@@ -10,6 +10,7 @@ function setup() {
   cir = document.querySelector("#cir");
   hex = document.querySelector("#hex");
   findGemInstruction();
+  
 
 }
 
@@ -97,3 +98,22 @@ AFRAME.registerComponent('registerevents', {
       } 
   }
 });
+
+ARjs.Source.prototype.copyElementSizeTo = function (otherElement){
+
+  if (window.innerWidth > window.innerHeight) {
+    //landscape
+    otherElement.style.width = this.domElement.style.width;
+    const height = parseInt(otherElement.style.width) * 3/4;
+    otherElement.style.height = height + 'px';
+    otherElement.style.marginLeft = 0;
+    otherElement.style.marginTop = ((window.innerHeight- height)/2) + 'px';
+  } else {
+    //portrait
+    otherElement.style.height = this.domElement.style.height;
+    const width = parseInt(otherElement.style.height) * 4/3;
+    otherElement.style.width = width + 'px';
+    otherElement.style.marginLeft = ((window.innerWidth- width)/2) + 'px';
+    otherElement.style.marginTop = 0;
+  }
+}
